@@ -30,6 +30,10 @@
         }
         .container {
             margin-top: 50px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
         }
         .button {
             background-color: #00bfff;
@@ -38,13 +42,22 @@
             font-size: 18px;
             border-radius: 20px;
             cursor: pointer;
-            margin: 10px;
             text-decoration: none;
             color: black;
             display: inline-block;
+            width: 150px;
+            text-align: center;
         }
         .button:hover {
             background-color: #009acd;
+        }
+        .catatan {
+            background-color: black;
+            color: white;
+            padding: 15px;
+            margin-top: 20px;
+            border-radius: 10px;
+            display: inline-block;
         }
     </style>
 </head>
@@ -54,9 +67,13 @@
     <div class="container">
         <a href="aqidah.html" class="button">Aqidah Akhlak</a>
         <a href="matematika.html" class="button">Matematika</a>
-        <a href="sosiologi.html" class="button">Sosiologi</a>        
+        <a href="sosiologi.html" class="button">Sosiologi</a>   
+        <a href="geografi.html" class="button">Geografi</a>
+        <a href="bhs_indonesia.html" class="button">Bhs. Indonesia</a>
+        <a href="fiqih.html" class="button">Fiqih</a>
     </div>
-    <p>catatan : Sementara baru bisa akses Aqidah Akhlak terlebih dahulu.
-        sisanya menyusul</p>
-    </body>
+    <div class="catatan">
+        <p>Catatan: Sementara baru bisa akses Aqidah Akhlak terlebih dahulu, sisanya menyusul.</p>
+    </div>
+</body>
 </html>
