@@ -11,7 +11,7 @@
             background-color: #f0f0f0;
             margin: 0;
             padding: 0;
-            overflow: hidden; /* Mencegah scroll */
+            overflow: hidden;
         }
         .header {
             background-color: #0e6676;
@@ -64,21 +64,6 @@
             border-radius: 10px;
             display: inline-block;
         }
-
-        /* Animasi Karakter */
-        #character {
-            position: absolute;
-            bottom: 50px;
-            left: 0;
-            width: 50px;
-            animation: moveCharacter 4s linear infinite alternate;
-        }
-
-        @keyframes moveCharacter {
-            0% { left: 0; transform: scaleX(1); }
-            50% { left: 80%; transform: scaleX(1); } /* Karakter maju */
-            100% { left: 0; transform: scaleX(-1); } /* Karakter kembali */
-        }
     </style>
 </head>
 <body>
@@ -91,6 +76,9 @@
         <a href="geografi.html" class="button selesai">Geografi</a>
         <a href="bhs_indonesia.html" class="button proses">Bhs. Indonesia</a>
         <a href="fiqih.html" class="button proses">Fiqih</a>
+        <a href="ekonomi.html" class="button proses">Ekonomi</a>
+        <a href="pkn.html" class="button proses">PKN</a>
+        <a href="bhs_inggris.html" class="button proses">Bhs. Inggris</a>
     </div>
 
     <div class="catatan">
@@ -102,21 +90,9 @@
         <p>warna biru artinya soal bisa dikerjakan<br>
         warna merah artinya soal masih dibuat dan belum bisa dikerjakan</p>
     </div>
-    
-    <img src="https://i.pinimg.com/736x/1f/2f/d9/1f2fd9cc08953303903f89ed052635af.jpg" id="character" alt="Character">
 
-    <script>
-        const character = document.getElementById("character");
-        let isWalking = true;
-
-        character.addEventListener("animationiteration", () => {
-            if (isWalking) {
-                character.src = "https://pa1.aminoapps.com/7018/ea756525e3f49e458f45f52972172203285fbd13r1-484-560_hq.gif";
-            } else {
-                character.src = "https://i.pinimg.com/originals/87/5b/55/875b5538cc3b0f1f469baeaa400c3748.gif";
-            }
-            isWalking = !isWalking;
-        });
-    </script>
+    <div class="catatan">
+        <img src="https://i.pinimg.com/originals/87/5b/55/875b5538cc3b0f1f469baeaa400c3748.gif" alt="Character">
+    </div>
 </body>
 </html>
