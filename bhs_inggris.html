@@ -1,1 +1,563 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ujian Bahasa Inggris</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: left;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        .button {
+            background-color: #00bfff;
+            border: 2px solid black;
+            padding: 10px 20px;
+            font-size: 18px;
+            border-radius: 20px;
+            cursor: pointer;
+            margin: 10px;
+            text-decoration: none;
+            color: black;
+            display: inline-block;
+        }
+        .button:hover {
+            background-color: #009acd;
+        }
+        #timer {
+            font-size: 20px;
+            font-weight: bold;
+            color: red;
+            margin-bottom: 20px;
+        }
+        .disabled {
+            background-color: gray;
+            cursor: not-allowed;
+        }
+        .correct {
+            color: green;
+            font-weight: bold;
+        }
+        .wrong {
+            color: red;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Ujian Bahasa Inggris</h2>
+        <p id="timer">Sisa Waktu: 60:00</p>
+        <form id="quizForm">
+            <p>Bale Kambang</p>
+	    <p>Bale Kambang is a small village in the Southern coast of East Java, seventy kilometers from Malang town and two hours' drive to South. It is well known for its long beautiful white sandy beach as well as the similarity of its temple to the one of Tanah Lot in Bali.</p>
+	    <p>In Bale Kambang, there are three small rocky islands namely Ismaya Island, Wisanggeni Island, and Anoman Island, those names are taken from "wayang" figures (Java traditional puppets). These islands are surrounded by Indonesian Ocean which huge waves frighten most overseas cruisers.</p>
 
+	    <p>1. What makes Bale Kambang famous is its …</p>
+	    <label><input type="radio" name="q1" value="A"> A. small rocky islands.</label><br>
+	    <label><input type="radio" name="q1" value="B"> B. long beautiful beach.</label><br>
+	    <label><input type="radio" name="q1" value="C"> C. huge waves of ocean.</label><br>
+	    <label><input type="radio" name="q1" value="D"> D. overseas cruisers.</label><br>
+	    <label><input type="radio" name="q1" value="E"> E. Java traditional puppets.</label><br>
+	    <p id="result_q1"></p><br>
+
+	    <p>2. What is the main idea of the second paragraph?</p>
+	    <label><input type="radio" name="q2" value="A"> A. Huge waves frighten many overseas cruisers.</label><br>
+	    <label><input type="radio" name="q2" value="B"> B. Names of rocky islands are taken from "wayang" figures.</label><br>
+	    <label><input type="radio" name="q2" value="C"> C. The rocky islands are in the middle of the sea.</label><br>
+	    <label><input type="radio" name="q2" value="D"> D. There are three rocky islands in Bale Kambang.</label><br>
+	    <label><input type="radio" name="q2" value="E"> E. The rocky islands are surrounded by Indonesian Ocean.</label><br>
+	    <p id="result_q2"></p><br>
+
+	    <p>Darma: You look so happy, Ratna.<br>
+	    Ratna: Yes. You know that I was just successful in making honey doughnut cakes.<br>
+	    Darma: Really? Can I try them?<br>
+	    Ratna: Of course! Here they are.<br>
+	    Darma: Wow, they look very beautiful. The texture is very soft and the taste is very delicious. You are such a talented cake maker. Congratulation all the way!<br>
+	    Ratna: Thanks for always supporting me.</p>
+
+	    <p>kalimat bergaris bawah : You are such a talented cake maker.  </p>
+	    <p>3. The underlined sentence expresses a ….</p>
+	    <label><input type="radio" name="q3" value="A"> A. gratitude</label><br>
+	    <label><input type="radio" name="q3" value="B"> B. condolence</label><br>
+	    <label><input type="radio" name="q3" value="C"> C. sympathy</label><br>
+	    <label><input type="radio" name="q3" value="D"> D. congratulation</label><br>
+	    <label><input type="radio" name="q3" value="E"> E. compliment</label><br>
+	    <p id="result_q3"></p><br>
+
+	    <p>Budi: Look! The sun is shiny and the breeze blows tenderly. The world is very beautiful.<br>
+	    Stevy: So what then?<br>
+	    Budi: Don’t you want to go out, Stev?<br>
+	    Stevy: Yes, I am going to go to the beach with my family at 9 a.m.<br>
+	    Budi: Really? Can I join you?<br>
+	    Stevy: Why not?</p>
+
+            <p>kalimat bergaris bawah : I am going to go to the beach with my family at 9 a.m.</p>
+	    <p>4. The underlined sentence shows that Stevy ….</p>
+	    <label><input type="radio" name="q4" value="A"> A. plans to go out with her family.</label><br>
+	    <label><input type="radio" name="q4" value="B"> B. is lazy to go out.</label><br>
+	    <label><input type="radio" name="q4" value="C"> C. is crazy about the beach.</label><br>
+	    <label><input type="radio" name="q4" value="D"> D. doesn’t have any plans to go out.</label><br>
+	    <label><input type="radio" name="q4" value="E"> E. has planned to go out with Budi.</label><br>
+	    <p id="result_q4"></p><br>
+
+	    <p>5. Where is the contractor located? It’s ….</p>
+	    <label><input type="radio" name="q5" value="A"> A. in Washington, D.C.</label><br>
+	    <label><input type="radio" name="q5" value="B"> B. at sea.</label><br>
+	    <label><input type="radio" name="q5" value="C"> C. in San Francisco, California.</label><br>
+	    <label><input type="radio" name="q5" value="D"> D. in space.</label><br>
+	    <label><input type="radio" name="q5" value="E"> E. in Naval.</label><br>
+	    <p id="result_q5"></p><br>
+
+	    <p>6. When will the contract end? It’s on …</p>
+	    <label><input type="radio" name="q6" value="A"> A. May.</label><br>
+	    <label><input type="radio" name="q6" value="B"> B. September.</label><br>
+	    <label><input type="radio" name="q6" value="C"> C. June.</label><br>
+	    <label><input type="radio" name="q6" value="D"> D. July.</label><br>
+	    <label><input type="radio" name="q6" value="E"> E. November.</label><br>
+	    <p id="result_q6"></p><br>
+
+	    <p>The following text is for questions 7-10.</p>
+	    <p>A farmer came across a bird with a broken wing. He picked it up, took it home and looked after it lovingly, even though his wife complained bitterly about his wasting too much time on the creature.</p>
+	    <p>After some time, the wing mended, and, because the bird did not want the farmer to have kept on arguing with his wife all the time, it decided to go back to its nest.</p>
+	    <p>When the farmer discovered that the bird was gone, he was so upset that he went out to look for it. Eventually, he found it again, and was greeted happily by the whole family of the bird. As a sign of their thanks for his care and attention, the birds gave him a little box, and told him not to open it until he got home.</p>
+	    <p>To his surprise, the farmer found the box full of precious stones. When his wife saw them, she decided that she too deserved a reward, and she went to see the birds. The birds gave her a little casket; but this one was full of devils. The devils jumped on her as soon as she opened the casket and chased her away.</p>
+	    <p>Left alone, the farmer went to live near his friend, the bird. There he built a hut of perfumed wood; and the birds decorated it with flowers of every kind.</p>
+
+	    <p>7. Which one of the following statements do you agree with?</p>
+	    <label><input type="radio" name="q7" value="A"> A. The farmer chased his wife away.</label><br>
+	    <label><input type="radio" name="q7" value="B"> B. The farmer lived happily with his wife.</label><br>
+	    <label><input type="radio" name="q7" value="C"> C. The farmer’s wife took care of the bird.</label><br>
+	    <label><input type="radio" name="q7" value="D"> D. The bird was very thankful to the farmer.</label><br>
+	    <label><input type="radio" name="q7" value="E"> E. The farmer’s wife was a very kind woman.</label><br>
+	    <p id="result_q7"></p><br>
+
+	    <p>8. The farmer’s new hut was….</p>
+	    <label><input type="radio" name="q8" value="A"> A. well furnished.</label><br>
+	    <label><input type="radio" name="q8" value="B"> B. built by the birds.</label><br>
+	    <label><input type="radio" name="q8" value="C"> C. a gift from the birds.</label><br>
+	    <label><input type="radio" name="q8" value="D"> D. decorated luxuriously.</label><br>
+	    <label><input type="radio" name="q8" value="E"> E. built of perfumed wood.</label><br>
+	    <p id="result_q8"></p><br>
+
+	    <p>9. What do we learn from the text?</p>
+	    <label><input type="radio" name="q9" value="A"> A. A good deed deserves a reward.</label><br>
+	    <label><input type="radio" name="q9" value="B"> B. A gift shows a kindness.</label><br>
+	    <label><input type="radio" name="q9" value="C"> C. Suffering brings happiness.</label><br>
+	    <label><input type="radio" name="q9" value="D"> D. Arguing makes you distressed.</label><br>
+	    <label><input type="radio" name="q9" value="E"> E. Having no heart makes you isolated.</label><br>
+	    <p id="result_q9"></p><br>
+
+	    <p>10. Paragraph 3 mainly tells us about …</p>
+	    <label><input type="radio" name="q10" value="A"> A. The bird left the farmer.</label><br>
+	    <label><input type="radio" name="q10" value="B"> B. The farmer was so angry and went out to find the bird.</label><br>
+	    <label><input type="radio" name="q10" value="C"> C. The birds welcomed the farmer</label><br>
+	    <label><input type="radio" name="q10" value="D"> D. The farmer was happy having got a box of precious stones.</label><br>
+	    <label><input type="radio" name="q10" value="E"> E. The farmer got a little casket from the birds.</label><br>
+	    <p id="result_q10"></p><br>
+
+	    <p>Bali, 5 November 2017</p>
+	    <p>Dear Amina,</p>
+	    <p>Thanks for your letter. Sorry for I haven’t written you for so long. I was busy all this time. Well, I am very glad that you have passed all the exams! Congratulations! My holiday is over. I spent my holidays very well. I went out with my friends, read a lot of (11) ……. books, watched TV, and played computer games.<br>
+	    I spent few weeks in a summer cottage with my grandparents. I helped my granny with the garden, plants, and gathered fruit and vegetables. Also I fished with my grandfather. I enjoyed floating by boat, swimming in the (12)…….. and helping my grandparents.<br>
+	    During my summer holidays I made many (13)……...friends, and read a lot of useful things. Now I feel ready to get back to school. I am happy to meet my friends and teachers. What about you? How did you spend your holidays? Did you like it? Sorry, I have to go. I must help my mum. Don't forget to reply my letter!<br>
+	    Best wishes,<br>Karina</p>
+
+	    <p>11. ……. books</p>
+	    <label><input type="radio" name="q11" value="A"> A. boring</label><br>
+	    <label><input type="radio" name="q11" value="B"> B. interesting</label><br>
+	    <label><input type="radio" name="q11" value="C"> C. dull</label><br>
+	    <label><input type="radio" name="q11" value="D"> D. tiring</label><br>
+	    <label><input type="radio" name="q11" value="E"> E. uninspiring</label><br>
+	    <p id="result_q11"></p><br>
+
+	    <p>12. ………</p>
+	    <label><input type="radio" name="q12" value="A"> A. fish pond</label><br>
+	    <label><input type="radio" name="q12" value="B"> B. cave</label><br>
+	    <label><input type="radio" name="q12" value="C"> C. forest</label><br>
+	    <label><input type="radio" name="q12" value="D"> D. river</label><br>
+	    <label><input type="radio" name="q12" value="E"> E. kitchen</label><br>
+	    <p id="result_q12"></p><br>
+
+	    <p>13. …….. friends</p>
+	    <label><input type="radio" name="q13" value="A"> A. last</label><br>
+	    <label><input type="radio" name="q13" value="B"> B. old</label><br>
+	    <label><input type="radio" name="q13" value="C"> C. new</label><br>
+	    <label><input type="radio" name="q13" value="D"> D. childhood</label><br>
+	    <label><input type="radio" name="q13" value="E"> E. ancient</label><br>
+	    <p id="result_q13"></p><br>
+
+	    <p>14. Diana : My bicycle is broken again. I must go on foot to school tomorrow.<br>
+	    David : I am sorry to hear that. ……………………………………..<br>
+	    Diana : Thank you very much, David. You are my best friend as always.</p>
+	    <label><input type="radio" name="q14" value="A"> A. You can’t use mine. I’m going to use it tomorrow.</label><br>
+	    <label><input type="radio" name="q14" value="B"> B. It’s better to go on foot, you’ll be healthier.</label><br>
+	    <label><input type="radio" name="q14" value="C"> C. You can use mine if you want to, and take your bicycle to bicycle repair shop soon.</label><br>
+	    <label><input type="radio" name="q14" value="D"> D. Just bring your bicycle to the bicycle repair shop.</label><br>
+	    <label><input type="radio" name="q14" value="E"> E. Just sell that old bicycle and buy a new one.</label><br>
+	    <p id="result_q14"></p><br>
+
+	    <p>15. Dhian : What do you think about the mushroom soup we’ve just had in Ste Restaurant, Ra?<br>
+	    Ara : … I want to come back again to the restaurant.</p>
+	    <label><input type="radio" name="q15" value="A"> A. According to me, the taste isn’t really good though the look is very tempting.</label><br>
+	    <label><input type="radio" name="q15" value="B"> B. I think it’s the worst soup I’ve ever had all my life.</label><br>
+	    <label><input type="radio" name="q15" value="C"> C. Frankly speaking, it’s too salty for me.</label><br>
+	    <label><input type="radio" name="q15" value="D"> D. Honestly, the taste is not as good as I hoped.</label><br>
+	    <label><input type="radio" name="q15" value="E"> E. In my opinion, the taste is good, the texture is soft and the look is very tempting.</label><br>
+	    <p id="result_q15"></p><br>
+
+	    <p>16. Who will hold the competition?</p>
+	    <label><input type="radio" name="q16" value="A"> A. Foreign Language Club of MAN 1 Bandar Lampung will.</label><br>
+	    <label><input type="radio" name="q16" value="B"> B. All Students of MAN 1 Bandar Lampung will.</label><br>
+	    <label><input type="radio" name="q16" value="C"> C. Some students of MAN 1 Bandar Lampung will.</label><br>
+	    <label><input type="radio" name="q16" value="D"> D. Stephanie will.</label><br>
+	    <label><input type="radio" name="q16" value="E"> E. The teachers of MAN 1 Bandar Lampung will.</label><br>
+	    <p id="result_q16"></p><br>
+
+	    <p>17. Which one of the following statements is true according to the text?</p>
+	    <label><input type="radio" name="q17" value="A"> A. The club will conduct a speech contest.</label><br>
+	    <label><input type="radio" name="q17" value="B"> B. The registration will last for a week.</label><br>
+	    <label><input type="radio" name="q17" value="C"> C. Stephanie is not the leader of the club.</label><br>
+	    <label><input type="radio" name="q17" value="D"> D. More than 3 kinds of prizes are available for the winners.</label><br>
+	    <label><input type="radio" name="q17" value="E"> E. The event will be conducted in MANSA Hall.</label><br>
+	    <p id="result_q17"></p><br>
+
+	    <p>The following text is for questions 18-20.</p>
+	    <p>Animals should not be used in circus.<br>
+	    The environment where they perform and their living conditions are usually inappropriate.</p>
+	    <p>Tigers, for example, which naturally live in wilderness, must perform tricks on a narrow stage<br>
+	    and spend their lifetime in a small cage.</p>
+
+	    <p>Besides, the living conditions of the circus animals are poor.<br>
+	    They live in a cramped condition most of the time.</p>
+
+	    <p>They actually need more space to roam.<br>
+	    They also do not have freedom to live with their own kind.</p>
+
+	    <p>We should ban the use of animals in circus<br>
+	    and their confinement there.</p>
+
+	    <p>18. Why does the writer consider circus inappropriate place to live for animals?</p>
+	    <label><input type="radio" name="q18" value="A"> A. It resembles the animals’ natural habitat.</label><br>
+	    <label><input type="radio" name="q18" value="B"> B. It is the place to get public amusement.</label><br>
+	    <label><input type="radio" name="q18" value="C"> C. It is the place where the animals are tortured.</label><br>
+	    <label><input type="radio" name="q18" value="D"> D. It provides animals bad food.</label><br>
+	    <label><input type="radio" name="q18" value="E"> E. It costs animals ill condition.</label><br>
+	    <p id="result_q18"></p><br>
+
+	    <p>19. According to the text, ...</p>
+	    <label><input type="radio" name="q19" value="A"> A. Tigers are the most suitable animals to perform tricks.</label><br>
+	    <label><input type="radio" name="q19" value="B"> B. Tigers are the smartest animals.</label><br>
+	    <label><input type="radio" name="q19" value="C"> C. The highlight of the circus is on the animals.</label><br>
+	    <label><input type="radio" name="q19" value="D"> D. Animals receive ill treatment in a circus.</label><br>
+	    <label><input type="radio" name="q19" value="E"> E. The animals are the main performers in circus.</label><br>
+	    <p id="result_q19"></p><br>
+
+	    <p>20. "They live in a cramped condition most of their time (Paragraph 3).</p>
+	    <p>The underlined word is closest in meaning to….</p>
+	    <label><input type="radio" name="q20" value="A"> A. clean and neat</label><br>
+	    <label><input type="radio" name="q20" value="B"> B. small and crowded</label><br>
+	    <label><input type="radio" name="q20" value="C"> C. dirty and messy</label><br>
+	    <label><input type="radio" name="q20" value="D"> D. poor but large</label><br>
+	    <label><input type="radio" name="q20" value="E"> E. large and quiet</label><br>
+	    <p id="result_q20"></p><br>
+
+	    <p>21. Stevy is drinking the goat milk. The passive form of the sentence is …</p>
+	    <label><input type="radio" name="q21" value="A"> A. The goat milk is drunk.</label><br>
+	    <label><input type="radio" name="q21" value="B"> B. The goat milk is being drunk.</label><br>
+	    <label><input type="radio" name="q21" value="C"> C. The goat milk was drunk.</label><br>
+	    <label><input type="radio" name="q21" value="D"> D. The goat milk is drinking.</label><br>
+	    <label><input type="radio" name="q21" value="E"> E. Stevy is being drunk.</label><br>
+	    <p id="result_q21"></p><br>
+
+	    <p>22. He was frustrated ….</p>
+	    <label><input type="radio" name="q22" value="A"> A. because his failure in the examination</label><br>
+	    <label><input type="radio" name="q22" value="B"> B. due to his failure in the examination</label><br>
+	    <label><input type="radio" name="q22" value="C"> C. although his failure in the examination</label><br>
+	    <label><input type="radio" name="q22" value="D"> D. however his failure in the examination</label><br>
+	    <label><input type="radio" name="q22" value="E"> E. because of his failure in the examination</label><br>
+	    <p id="result_q22"></p><br>
+
+	    <p>The following text is for questions 23-25.</p>
+	    <p>Snakes are reptiles (cold-blooded creatures).<br>
+	    They belong to the same group as lizards (the scaled group, Squamata) but from a sub-group of their own (Serpentes).</p>
+
+	    <p>Snakes have two legs but a long time ago they had claws to help them slither along.<br>
+	    Snakes are not slimy. They are covered in scales which are just bumps on the skin.<br>
+	    Their skin is hard and glossy to reduce friction as the snake slithers along the ground.</p>
+
+	    <p>Snakes often sun bathe on rocks in the warm weather.<br>
+	    This is because snakes are cold-blooded; they need the sun’s warmth to heat their bodies up.</p>
+
+	    <p>Most snakes live in the country.<br>
+	    Some types of snakes live in trees, some live in water, but most live on the ground in deserted rabbit burrows, in thick long grass and in old logs.</p>
+
+	    <p>A snake’s diet usually consists of frogs, lizards, mice, and other snakes.<br>
+	    The Anaconda can eat small crocodiles and even bears.<br>
+	    Many snakes protect themselves with their fangs.<br>
+	    Some snakes are protected by scaring their enemies away like the Cobra.<br>
+	    The flying snakes glide away from danger.<br>
+	    Their ribs spread apart and the skin stretches out.<br>
+	    Its technique is just like the sugar gliders.</p>
+
+	    <p>23. Since the snakes are cold-blooded, they….</p>
+	    <label><input type="radio" name="q23" value="A"> A. require the sun’s warmth to heat their bodies</label><br>
+	    <label><input type="radio" name="q23" value="B"> B. like sucking the cool blood</label><br>
+	    <label><input type="radio" name="q23" value="C"> C. avoid sun-bathing to their skins</label><br>
+	    <label><input type="radio" name="q23" value="D"> D. never sun bathe in the warm weather</label><br>
+	    <label><input type="radio" name="q23" value="E"> E. live on the ground in deserted burrows</label><br>
+	    <p id="result_q23"></p><br>
+
+	    <p>24. We know from the text that snakes….</p>
+	    <label><input type="radio" name="q24" value="A"> A. did not have claws</label><br>
+	    <label><input type="radio" name="q24" value="B"> B. do not like sunlight</label><br>
+	    <label><input type="radio" name="q24" value="C"> C. have no legs and claws</label><br>
+	    <label><input type="radio" name="q24" value="D"> D. used their claws to slither along the ground</label><br>
+	    <label><input type="radio" name="q24" value="E"> E. use their legs to climb the tree</label><br>
+	    <p id="result_q24"></p><br>
+
+	    <p>25. How do flying snakes protect themselves?</p>
+	    <label><input type="radio" name="q25" value="A"> A. They use their fangs to scare their enemies.</label><br>
+	    <label><input type="radio" name="q25" value="B"> B. They stretch out their skin.</label><br>
+	    <label><input type="radio" name="q25" value="C"> C. They fly away.</label><br>
+	    <label><input type="radio" name="q25" value="D"> D. They eat the other animals.</label><br>
+	    <label><input type="radio" name="q25" value="E"> E. They sun bathe on rocks.</label><br>
+	    <p id="result_q25"></p><br>
+
+            <p>The following dialogue is for questions 26-28.</p>
+
+            <p>Stephanie: You look very busy. What can I do to help you, Mom?<br>
+            Mommy: Yes, Ste. You can go to the garden to take some vegetables like carrot, broccoli, kale, spring onion, and celery.<br>
+            Stephanie: What else, Mom?<br>
+            Mommy: Then you cook some soup and make some salad for lunch.<br>
+            Stephanie: Then, Mom?<br>
+            Mommy: Then you bring the food to the front yard gazebo for us to have lunch together.<br>
+            Stephanie: Ok, Mom.</p>
+
+ 	    <p>kalimat dibawah garis : What can I do to help you, Mom?</p>
+            <p>26. The underlined sentence shows the expression of ….</p>
+            <label><input type="radio" name="q26" value="A"> A. making an appointment</label><br>
+            <label><input type="radio" name="q26" value="B"> B. gratitude</label><br>
+            <label><input type="radio" name="q26" value="C"> C. congratulation</label><br>
+            <label><input type="radio" name="q26" value="D"> D. offering a help</label><br>
+            <label><input type="radio" name="q26" value="E"> E. compliment</label><br>
+            <p id="result_q26"></p><br>
+
+            <p>27. How many kinds of vegetables does Mommy want Stevy to take?</p>
+            <label><input type="radio" name="q27" value="A"> A. 1</label><br>
+            <label><input type="radio" name="q27" value="B"> B. 2</label><br>
+            <label><input type="radio" name="q27" value="C"> C. 3</label><br>
+            <label><input type="radio" name="q27" value="D"> D. 4</label><br>
+            <label><input type="radio" name="q27" value="E"> E. 5</label><br>
+            <p id="result_q27"></p><br>
+
+            <p>28. From the text we know that ….</p>
+            <label><input type="radio" name="q28" value="A"> A. Stephanie is good at cooking</label><br>
+            <label><input type="radio" name="q28" value="B"> B. Mommy doesn’t have many works to do</label><br>
+            <label><input type="radio" name="q28" value="C"> C. Stephanie goes to vegetables shop</label><br>
+            <label><input type="radio" name="q28" value="D"> D. They will have dinner in the front yard gazebo</label><br>
+            <label><input type="radio" name="q28" value="E"> E. They won’t have lunch together</label><br>
+            <p id="result_q28"></p><br>
+
+            <p>The following text is for questions 29-33.</p>
+
+            <p>Dear Sir,<br>
+            With reference to your advertisement in Today’s Time, I would like to be considered for the Marketing Senior Assistant post.<br>
+            My present position is an electronic marketing staff where I have special responsibility for home appliances. I also have experiences in other electronic goods, like cameras and smartphones. I have been working as a marketing specialist as soon as I completed my first degree in 2012. My tasks among others are building good relationships with distributors and customers, and providing inputs for the company about pricing policies, marketing strategies, and customer satisfaction.<br>
+            Hoping to hear from you soon, I enclose my curriculum vitae and recent photograph.<br>
+            Yours faithfully,<br>
+            Harry Clarks</p>
+
+            <p>29. Why does the sender write the letter? It’s ….</p>
+            <label><input type="radio" name="q29" value="A"> A. to provide inputs for the company</label><br>
+            <label><input type="radio" name="q29" value="B"> B. to give information about his specialty</label><br>
+            <label><input type="radio" name="q29" value="C"> C. to convince the readers about his experience</label><br>
+            <label><input type="radio" name="q29" value="D"> D. to introduce himself</label><br>
+            <label><input type="radio" name="q29" value="E"> E. to apply for a certain position</label><br>
+            <p id="result_q29"></p><br>
+
+            <p>36. The old house … in 1930.</p>
+            <label><input type="radio" name="q36" value="A"> A. was built</label><br>
+            <label><input type="radio" name="q36" value="B"> B. build</label><br>
+            <label><input type="radio" name="q36" value="C"> C. building</label><br>
+            <label><input type="radio" name="q36" value="D"> D. has built</label><br>
+            <label><input type="radio" name="q36" value="E"> E. was building</label><br>
+            <p id="result_q36"></p><br>
+
+	    <p>The following text is for questions 37-40.</p>
+	    <p>What you need:<br>
+	     - Your Smartphones<br>
+	     - Wi-Fi Connection</p>
+ 	    <p>Steps to connect to a network:<br>
+	    1. Tap settings.<br>
+	    2. Tap Wi-Fi.<br>
+	    3. Turn on the Wi-Fi, your smartphone will automatically search for available Wi-Fi networks.<br>
+	    4. Tap the name of your desired Wi-Fi network:<br>
+	    - If the network is not password-protected, a check-mark will appear to the right of the network if your smartphone is connected to the network.<br>
+	    - If the network is password-protected, you will be prompted to enter the password. A check-mark will appear to the right of the network if your smartphone is connected to the network.<br>
+	    5. If your desired network does not appear, it is possible that your network is hidden:<br>
+	    - Tap other.<br>
+	    - Enter the exact name of the network.<br>
+	    - Once it exists, you will be prompted to enter the password. A check-mark will appear to the right of the network if your smartphone is connected to the network.</p>
+
+            <p>37. What is the best title for the text?</p>
+            <label><input type="radio" name="q37" value="A"> A.	How to input your password.</label><br>
+            <label><input type="radio" name="q37" value="B"> B.	How to connect your smartphones to hidden network.</label><br>
+            <label><input type="radio" name="q37" value="C"> C.	How to connect your smartphones to Wi-Fi.</label><br>
+            <label><input type="radio" name="q37" value="D"> D.	How to connect to Wi-Fi if you are outside the range of networks.</label><br>
+            <label><input type="radio" name="q37" value="E"> E.	How to search for available Wi-Fi networks.</label><br>
+            <p id="result_q37"></p><br>
+
+            <p>38. What is one possible condition if your network does not appear?</p>
+            <label><input type="radio" name="q38" value="A"> A.	Your phone is broken.</label><br>
+            <label><input type="radio" name="q38" value="B"> B.	The network is hidden.</label><br>
+            <label><input type="radio" name="q38" value="C"> C.	The network is password-protected.</label><br>
+            <label><input type="radio" name="q38" value="D"> D.	The network is not password-protected.</label><br>
+            <label><input type="radio" name="q38" value="E"> E.	You don’t have enough phone credit.</label><br>
+            <p id="result_q38"></p><br>
+
+            <p>39. What is the difference between hidden network and not hidden network?</p>
+            <label><input type="radio" name="q39" value="A"> Hidden network can be accessed without password.</label><br>
+            <label><input type="radio" name="q39" value="B"> B.	Hidden network is not password protected.</label><br>
+            <label><input type="radio" name="q39" value="C"> C.	Hidden network does not actually exist.</label><br>
+            <label><input type="radio" name="q39" value="D"> D.	Hidden network will not display itself unless you type the exact name of the network.</label><br>
+            <label><input type="radio" name="q39" value="E"> E.	Hidden network is outside the range of your phone.</label><br>
+            <p id="result_q39"></p><br>
+
+            <p>40.  …, your smartphone will {[bergaris bawah]automatically[bergaris bawah]} search for available Wi-Fi networks.<br>
+             The underlined word has the opposite meaning with ….</p>
+            <label><input type="radio" name="q40" value="A"> A.	manually</label><br>
+            <label><input type="radio" name="q40" value="B"> B.	mechanically</label><br>
+            <label><input type="radio" name="q40" value="C"> C.	spontaneously</label><br>
+            <label><input type="radio" name="q40" value="D"> D.	robotically</label><br>
+            <label><input type="radio" name="q40" value="E"> E.	habitually</label><br>
+            <p id="result_q40"></p><br>
+
+            <button class="button disabled" type="submit" id="submitButton" disabled>Submit Jawaban</button>
+        </form>
+        <p id="score"></p>
+        <a href="index.html" class="button">Kembali ke Beranda</a>
+    </div>
+
+    <script>
+        let timeLeft = 3600;
+        let timerElement = document.getElementById("timer");
+        let submitButton = document.getElementById("submitButton");
+
+        function updateTimer() {
+            let minutes = Math.floor(timeLeft / 60);
+            let seconds = timeLeft % 60;
+            timerElement.textContent = "Sisa Waktu: " + minutes + ":" + (seconds < 10 ? "0" : "") + seconds;
+            if (timeLeft > 0) {
+                timeLeft--;
+                setTimeout(updateTimer, 1000);
+            } else {
+                alert("Waktu habis! Jawaban akan dikoreksi.");
+                document.getElementById("quizForm").submit();
+            }
+        }
+
+        setTimeout(updateTimer, 1000);
+
+        function checkAllAnswered() {
+            let allAnswered = true;
+            let totalQuestions = 40;
+            for (let i = 1; i <= totalQuestions; i++) {
+                let answered = document.querySelector(`input[name="q${i}"]:checked`);
+                if (!answered) {
+                    allAnswered = false;
+                    break;
+                }
+            }
+            if (allAnswered) {
+                submitButton.disabled = false;
+                submitButton.classList.remove("disabled");
+            } else {
+                submitButton.disabled = true;
+                submitButton.classList.add("disabled");
+            }
+        }
+
+        document.querySelectorAll("input[type='radio']").forEach(input => {
+            input.addEventListener("change", checkAllAnswered);
+        });
+
+        document.getElementById("quizForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            let correctAnswers = {
+                q1: "B",
+                q2: "D",
+                q3: "E",
+                q4: "A",
+                q5: "C",
+                q6: "B",
+                q7: "D",
+                q8: "E",
+                q9: "A",
+                q10: "C",
+                q11: "B",
+                q12: "D",
+                q13: "C",
+                q14: "C",
+                q15: "E",
+                q16: "A",
+                q17: "E",
+                q18: "C",
+                q19: "D",
+                q20: "B",
+                q21: "B",
+                q22: "E",
+                q23: "A",
+                q24: "D",
+                q25: "C",
+                q26: "D",
+                q27: "E",
+                q28: "A",
+                q29: "E",
+                q30: "B",
+                q31: "A",
+                q32: "C",
+                q33: "B",
+                q34: "D",
+                q35: "E",
+                q36: "A",
+                q37: "C",
+                q38: "B",
+                q39: "D",
+                q40: "A"
+
+            };
+            let score = 0;
+
+            for (let key in correctAnswers) {
+                let selected = document.querySelector(`input[name="${key}"]:checked`);
+                let resultElement = document.getElementById(`result_${key}`);
+
+                if (selected) {
+                    if (selected.value === correctAnswers[key]) {
+                        score += 2.5;
+                        resultElement.innerHTML = "✔ Benar";
+                        resultElement.className = "correct";
+                    } else {
+                        resultElement.innerHTML = `✘ Salah, Jawaban Benar: ${correctAnswers[key]}`;
+                        resultElement.className = "wrong";
+                    }
+                }
+            }
+
+            document.getElementById("score").innerHTML = `<strong>Skor Anda: ${score} dari 100</strong>`;
+        });
+    </script>
+</body>
+</html>
