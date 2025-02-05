@@ -1,1 +1,505 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ujian Fiqih</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: left;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        .button {
+            background-color: #00bfff;
+            border: 2px solid black;
+            padding: 10px 20px;
+            font-size: 18px;
+            border-radius: 20px;
+            cursor: pointer;
+            margin: 10px;
+            text-decoration: none;
+            color: black;
+            display: inline-block;
+        }
+        .button:hover {
+            background-color: #009acd;
+        }
+        #timer {
+            font-size: 20px;
+            font-weight: bold;
+            color: red;
+            margin-bottom: 20px;
+        }
+        .disabled {
+            background-color: gray;
+            cursor: not-allowed;
+        }
+        .correct {
+            color: green;
+            font-weight: bold;
+        }
+        .wrong {
+            color: red;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Ujian Fiqih</h2>
+        <p id="timer">Sisa Waktu: 60:00</p>
+        <form id="quizForm">
+            <p>1.	Istilah fikih berasal  dari kata fiqhun yang secara bahasa berarti فَهْمٌ عَمِيْقٌ yaitu....</p>
+            <label><input type="radio" name="q1" value="A"> A.	Penjelasan</label><br>
+            <label><input type="radio" name="q1" value="B"> B.	Ilmu ibadah</label><br>
+            <label><input type="radio" name="q1" value="C"> C.	pemahaman yang mendalam</label><br>
+            <label><input type="radio" name="q1" value="D"> D.	Aturan yang harus dikerjakan</label><br>
+            <label><input type="radio" name="q1" value="E"> E.	Paham para ulama</label><br>
+            <p id="result_q1"></p><br>
 
+            <p>2.	Di bawah ini merupakan contoh muamalah, yaitu ...</p>
+            <label><input type="radio" name="q2" value="A"> A.	Shalat berjamaah</label><br>
+            <label><input type="radio" name="q2" value="B"> B.	Kerjasama dalam bidang pertanian</label><br>
+            <label><input type="radio" name="q2" value="C"> C.	Puasa ramadhan</label><br>
+            <label><input type="radio" name="q2" value="D"> D.	Membaca alqur’an</label><br>
+            <label><input type="radio" name="q2" value="E"> E.	Ibadah haji dan umrah</label><br>
+            <p id="result_q2"></p><br>
+
+            <p>3.	Kemudahan yang diberikan dalam menjalankan syari’at Islam sering  disebut ...</p>
+            <label><input type="radio" name="q3" value="A"> A.	rukhshah</label><br>
+            <label><input type="radio" name="q3" value="B"> B.	mu’jizat</label><br>
+            <label><input type="radio" name="q3" value="C"> C.	ajimat</label><br>
+            <label><input type="radio" name="q3" value="D"> D.	maunah</label><br>
+            <label><input type="radio" name="q3" value="E"> E.	madharat</label><br>
+            <p id="result_q3"></p><br>
+
+            <p>4.	Salah satu maqasidus syariah adalah Hifdz al Nafs,  artinya....</P>
+            <label><input type="radio" name="q4" value="A"> A.	Kewajiban memelihara harta</label><br>
+            <label><input type="radio" name="q4" value="B"> B.	Kewajiban menjaga dan memelihara jiwa manusia</label><br>
+            <label><input type="radio" name="q4" value="C"> C.	Kewajiban menjaga keturunan</label><br>
+            <label><input type="radio" name="q4" value="D"> D.	Kewajiban menjaga lingkungan</label><br>
+            <label><input type="radio" name="q4" value="E"> E.	Kewajiban menjaga agama</label><br>
+            <p id="result_q4"></p><br>
+
+            <p>5.	Ibadah dibedakan menjadi dua, yaitu ibadah mahdlah dan ibadah ghairu mahdlah.<br>
+             Ibadah ghairu mahdlah pelaksanaan....</p>
+            <label><input type="radio" name="q5" value="A"> A.	Terikat dengan tempat dan waktu</label><br>
+            <label><input type="radio" name="q5" value="B"> B.	Tidak terikat dengan orang lain</label><br>
+            <label><input type="radio" name="q5" value="C"> C.	Terikat aturan perundang-undangan</label><br>
+            <label><input type="radio" name="q5" value="D"> D.	Tidak terikat dengan batasan waktu dan tempat</label><br>
+            <label><input type="radio" name="q5" value="E"> E.	Tidak bebas tapi harus sama</label><br>
+            <p id="result_q5"></p><br>
+
+            <p>6.	Di bawah ini yang bukan termasuk nama lain dari zakat adalah…</p>
+            <label><input type="radio" name="q6" value="A"> A.	Tumbuh</label><br>
+            <label><input type="radio" name="q6" value="B"> B.	Thaharah</label><br>
+            <label><input type="radio" name="q6" value="C"> C.	Barokah</label><br>
+            <label><input type="radio" name="q6" value="D"> D.	Bertambah</label><br>
+            <label><input type="radio" name="q6" value="E"> E.	Berkembang</label><br>
+            <p id="result_q6"></p><br>
+
+            <p>7.	Orang yang berhak menerima zakat delapan  golongan, sebagaimana yang tercantum di dalam …</p>
+            <label><input type="radio" name="q7" value="A"> A.	QS. At-Taubat : 60</label><br>
+            <label><input type="radio" name="q7" value="B"> B.	QS. At-Taubat : 103</label><br>
+            <label><input type="radio" name="q7" value="C"> C.	QS. Al Baqarah : 183</label><br>
+            <label><input type="radio" name="q7" value="D"> D.	QS. Al Maidah : 3 </label><br>
+            <label><input type="radio" name="q7" value="E"> E.	QS. Al ‘alaq : 1 – 5</label><br>
+            <p id="result_q7"></p><br>
+
+            <p>8.	Berikut ini adalah orang-orang yang  bukan termasuk berhak menerima zakat, yaitu…</p>
+            <label><input type="radio" name="q8" value="A"> A.	Fakir</label><br>
+            <label><input type="radio" name="q8" value="B"> B.	Sabilillah</label><br>
+            <label><input type="radio" name="q8" value="C"> C.	Muallaf</label><br>
+            <label><input type="radio" name="q8" value="D"> D.	Muzakki</label><br>
+            <label><input type="radio" name="q8" value="E"> E.	Amil </label><br>
+            <p id="result_q8"></p><br>
+
+            <p>9.	Disyariatkannya zakat tentunya memiliki tujuan, adapun salah satu tujuan zakat adalah …</p>
+            <label><input type="radio" name="q9" value="A"> A.	Membersihkan jiwa</label><br>
+            <label><input type="radio" name="q9" value="B"> B.	Menyejukkan jiwa</label><br>
+            <label><input type="radio" name="q9" value="C"> C.	Mengharumkan jiwa</label><br>
+            <label><input type="radio" name="q9" value="D"> D.	Pengikat jiwa</label><br>
+            <label><input type="radio" name="q9" value="E"> E.	Menenangkan jiwa </label><br>
+            <p id="result_q9"></p><br>
+
+            <p>10.	Orang yang banyak menanggung hutang termasuk golongan berhak menerima zakat. Ia adalah …</p>
+            <label><input type="radio" name="q10" value="A"> A.	Yatim</label><br>
+            <label><input type="radio" name="q10" value="B"> B.	Gharim</label><br>
+            <label><input type="radio" name="q10" value="C"> C.	Ibnu sabil</label><br>
+            <label><input type="radio" name="q10" value="D"> D.	Muallaf</label><br>
+            <label><input type="radio" name="q10" value="E"> E.	Mukallaf </label><br>
+            <p id="result_q10"></p><br>
+
+            <p>11.	Emas bila sudah satu nisab wajib di zakati. Nisab emas adalah …</p>
+            <label><input type="radio" name="q11" value="A"> A.	200 Dirham</label><br>
+            <label><input type="radio" name="q11" value="B"> B.	624 Gr</label><br>
+            <label><input type="radio" name="q11" value="C"> C.	93,6 Gr</label><br>
+            <label><input type="radio" name="q11" value="D"> D.	100 Gr</label><br>
+            <label><input type="radio" name="q11" value="E"> E.	96,3 Gr </label><br>
+            <p id="result_q11"></p><br>
+
+            <p>12.	Memakai dua lembar kain tidak dijahit, yang digunakan untuk selendang atau sarung. Kain tersebut merupakan pakaian ketika …</p>
+            <label><input type="radio" name="q12" value="A"> A.	Ihram</label><br>
+            <label><input type="radio" name="q12" value="B"> B.	Thawaf</label><br>
+            <label><input type="radio" name="q12" value="C"> C.	Wukuf</label><br>
+            <label><input type="radio" name="q12" value="D"> D.	Tahallul</label><br>
+            <label><input type="radio" name="q12" value="E"> E.	Sa’i</label><br>
+            <p id="result_q12"></p><br>
+
+	    <p>13.	Jika ada  anak yang belum baligh, tetapi sudah menunaikan ibadah haji maka …</p>
+            <label><input type="radio" name="q13" value="A"> A.	Hajinya sah, dan tidak mengulang lagi</label><br>
+            <label><input type="radio" name="q13" value="B"> B.	Hajinya tidak sah karena belum cukup umur</label><br>
+            <label><input type="radio" name="q13" value="C"> C.	Hajinya sah, tetapi setelah dewasa wajib haji kembali </label><br>
+            <label><input type="radio" name="q13" value="D"> D.	Sah tapi tidak mendapat pahala</label><br>
+            <label><input type="radio" name="q13" value="E"> E.	Hajinya sia-sia</label><br>
+            <p id="result_q13"></p><br>
+
+            <p>14. اَلْحَجُّ مَرَّةً فَمَن زَادَ فَهُوَ تَطَوُّ عٌ  </p>
+            <p>Hadits di atas ini menjelaskan bahwa melaksanakan haji wajibnya sebanyak ….</p>
+            <label><input type="radio" name="q14" value="A"> A.	1 kali</label><br>
+            <label><input type="radio" name="q14" value="B"> B.	2 kali</label><br>
+            <label><input type="radio" name="q14" value="C"> C.	3 kali</label><br>
+            <label><input type="radio" name="q14" value="D"> D.	4 kali</label><br>
+            <label><input type="radio" name="q14" value="E"> E.	5 kali </label><br>
+            <p id="result_q14"></p><br>
+
+            <p>15.	Apabila melanggar larangan ihram berupa memotong rambut, atau memotong kuku atau memakai pakaian yang berjahit bagi laki-laki, maka wajib membayar.... </p>
+            <label><input type="radio" name="q15" value="A"> A.	Diyat</label><br>
+            <label><input type="radio" name="q15" value="B"> B.	Kifarat</label><br>
+            <label><input type="radio" name="q15" value="C"> C.	Hudud</label><br>
+            <label><input type="radio" name="q15" value="D"> D.	Tijarah</label><br>
+            <label><input type="radio" name="q15" value="E"> E.	Dam </label><br>
+            <p id="result_q15"></p><br>
+
+            <p>16.	Di bawah ini yang bukan termasuk rukun haji adalah…</p>
+            <label><input type="radio" name="q16" value="A"> A.	Ihram</label><br>
+            <label><input type="radio" name="q16" value="B"> B.	Wukuf di arafah</label><br>
+            <label><input type="radio" name="q16" value="C"> C.	Sa’i</label><br>
+            <label><input type="radio" name="q16" value="D"> D.	Lempar jumrah</label><br>
+            <label><input type="radio" name="q16" value="E"> E.	Thawaf</label><br>
+            <p id="result_q16"></p><br>
+
+            <p>17. بِسمِ اللهِ وَاللهُ اَكبَر  </p>
+	    <p>Bacaan tersebut diucapkan ketika …</p>
+            <label><input type="radio" name="q17" value="A"> A.	Thawaf</label><br>
+            <label><input type="radio" name="q17" value="B"> B.	Sa’i</label><br>
+            <label><input type="radio" name="q17" value="C"> C.	Melimpar jumroh</label><br>
+            <label><input type="radio" name="q17" value="D"> D.	Wukuf di arafah</label><br>
+            <label><input type="radio" name="q17" value="E"> E.	Ihram </label><br>
+            <p id="result_q17"></p><br>
+
+            <p>18.	Pembunuhan yang dilakukan tanpa adanya niat membunuh dan dengan cara atau alat yang biasanya tidak mematikan disebut … .</p>
+            <label><input type="radio" name="q18" value="A"> A.	Pembunuhan sengaja	</label><br>
+            <label><input type="radio" name="q18" value="B"> B.	Pembunuhan seperti sengaja</label><br>
+            <label><input type="radio" name="q18" value="C"> C.	Pembunuhan tersalah</label><br>
+            <label><input type="radio" name="q18" value="D"> D.	Pembunuhan tidak sengaja</label><br>
+            <label><input type="radio" name="q18" value="E"> E. Pembunuhan terencana</label><br>
+            <p id="result_q18"></p><br>
+
+            <p>19.	Hukuman bagi pelaku pembunuhan sengaja yang dimaafkan  oleh keluarga korban adalah...</p>
+            <label><input type="radio" name="q19" value="A"> A.	Qishash </label><br>
+            <label><input type="radio" name="q19" value="B"> B.	Kaffarah</label><br>
+            <label><input type="radio" name="q19" value="C"> C.	Diyat mukhaffafah dan kaffarah</label><br>
+            <label><input type="radio" name="q19" value="D"> D.	Diyat mughaladzah</label><br>
+            <label><input type="radio" name="q19" value="E"> E.	Dyat mughaladzah dan kaffarah</label><br>
+            <p id="result_q19"></p><br>
+
+            <p>20. وَمَنْ قَتَلَ مُؤْمِنًا خَطَئًا فَتَحْرِيْرُ رَقَبَةٍ مُؤْمِنَةٍ وَدِيَةٌ مُسَلَّمَةٌ إِلَى أَهْلِهِ… </p>
+	    <p>Ayat di atas menjelaskan tentang jenis pembunuhan … .</p>
+            <label><input type="radio" name="q20" value="A"> A.	Pembunuhan sengaja</label><br>
+            <label><input type="radio" name="q20" value="B"> B.	Pembunuhan missal</label><br>
+            <label><input type="radio" name="q20" value="C"> C.	Pembunuhan tersalah</label><br>
+            <label><input type="radio" name="q20" value="D"> D.	Pembunuhan semi masal</label><br>
+            <label><input type="radio" name="q20" value="E"> E.	Pembunuhan seperti tersalah</label><br>
+            <p id="result_q20"></p><br>
+
+            <p>21.	Hukuman yang berupa pembalasan yang sama (serupa) dengan perbuatan yang telah dilakukan, dalam istilah Fiqh Islam disebut…</p>
+            <label><input type="radio" name="q21" value="A"> A.	Qishash</label><br>
+            <label><input type="radio" name="q21" value="B"> B.	Kifarat</label><br>
+            <label><input type="radio" name="q21" value="C"> C.	Diyat </label><br>
+            <label><input type="radio" name="q21" value="D"> D.	Jinayah</label><br>
+            <label><input type="radio" name="q21" value="E"> E.	Uqubah</label><br>
+            <p id="result_q21"></p><br>
+
+            <p>22.	Apabila sekelompok orang membunuh seseorang dengan sengaja secara massal, maka semua pelaku  harus di qishash. Hal ini berdasarkan pada pendapat … .</p>
+            <label><input type="radio" name="q22" value="A"> A.	Sa’id Ibnu Musayyab</label><br>
+            <label><input type="radio" name="q22" value="B"> B.	Imam Syafi’i</label><br>
+            <label><input type="radio" name="q22" value="C"> C.	Imam Hambali</label><br>
+            <label><input type="radio" name="q22" value="D"> D.	Umar bin Khattab</label><br>
+            <label><input type="radio" name="q22" value="E"> E. Imam maliki</label><br>
+            <p id="result_q22"></p><br>
+
+            <p>23.	لَا يُقْتَلُ وَالِدُ بَوَلَدِهِ  </p>
+	    <p>Hadits di atas menjelaskan tentang…</p>
+            <label><input type="radio" name="q23" value="A"> A.	Tidak diqishasnya anak yang membunuh orang tuanya</label><br>
+            <label><input type="radio" name="q23" value="B"> B.	Tidak diqishasnya orang tua yang membunuh anaknya</label><br>
+            <label><input type="radio" name="q23" value="C"> C.	Tidak diqishasnya pemimpin yang  membunuh rakyatnya</label><br>
+            <label><input type="radio" name="q23" value="D"> D.	Diqishasnya orang tua yang membunuh anaknya</label><br>
+            <label><input type="radio" name="q23" value="E"> E.	Diqishasnya anak yang membunuh orang tuanya </label><br>
+            <p id="result_q23"></p><br>
+
+            <p>24.	Diyat mughalladzah terdiri dari … .</p>
+            <label><input type="radio" name="q24" value="A"> A.	30 hiqqoh, 30 jadza’ah dan 30 khilfah</label><br>
+            <label><input type="radio" name="q24" value="B"> B.	40 hiqqoh, 30 jadza’ah dan 30 khilfah</label><br>
+            <label><input type="radio" name="q24" value="C"> C.	30 hiqqoh, 40 jadza’ah dan 30 khilfah</label><br>
+            <label><input type="radio" name="q24" value="D"> D.	30 hiqqoh, 30 jadza’ah dan 40 khilfah</label><br>
+            <label><input type="radio" name="q24" value="E"> E.	40 hiqqoh, 40 jadza’ah dan 20 khilfah</label><br>
+            <p id="result_q24"></p><br>
+
+            <p>25.	A menusuk mata sebelah kiri B dengan sebilah pisau sehingga mata kiri B menjadi buta, sedangkan mata kiri A sudah buta. Dalam konteks semisal ini, konsekuensi hukuman yang harus diterima A adalah  … .</p>
+            <label><input type="radio" name="q25" value="A"> A.	Qishash </label><br>
+            <label><input type="radio" name="q25" value="B"> B.	Kaffarah</label><br>
+            <label><input type="radio" name="q25" value="C"> C.	Membayar diyat 35 ekor unta</label><br>
+            <label><input type="radio" name="q25" value="D"> D.	Diyat mukhaffafah</label><br>
+            <label><input type="radio" name="q25" value="E"> E.	Membayar setengah diyat</label><br>
+            <p id="result_q25"></p><br>
+
+            <p>26.	Jenis denda yang wajib dibayarkan oleh seseorang sebagai tanda taubat kepada Allah Swt dinamakan … .</p>
+            <label><input type="radio" name="q26" value="A"> A.	Qishash</label><br>
+            <label><input type="radio" name="q26" value="B"> B.	Kaffarah</label><br>
+            <label><input type="radio" name="q26" value="C"> C.	Diyat</label><br>
+            <label><input type="radio" name="q26" value="D"> D.	Uqubah</label><br>
+            <label><input type="radio" name="q26" value="E"> E.	Jinayah</label><br>
+            <p id="result_q26"></p><br>
+
+            <p>27.	Orang yang diangkat oleh pemerintah untuk menyelesaikan  persengketaan dan memutuskan suatu perkara dengan adil disebut … .</p>
+            <label><input type="radio" name="q27" value="A"> A.	Qadha’</label><br>
+            <label><input type="radio" name="q27" value="B"> B.	Mufti</label><br>
+            <label><input type="radio" name="q27" value="C"> C.	Mujtahid </label><br>
+            <label><input type="radio" name="q27" value="D"> D.	Qadhi</label><br>
+            <label><input type="radio" name="q27" value="E"> E.	Fuqaha</label><br>
+            <p id="result_q27"></p><br>
+
+            <p>28.	 menurut Syara’ ahli waris yang bagiannya tidak ditetapkan tetapi bisa mendapat semua harta atau sisa harta setelah dibagi kepada ahli waris disebut ........</p>
+            <label><input type="radio" name="q28" value="A"> A.	Dzawil Furudz</label><br>
+            <label><input type="radio" name="q28" value="B"> B.	Furudul Muqoddaroh</label><br>
+            <label><input type="radio" name="q28" value="C"> C.	Hijab</label><br>
+            <label><input type="radio" name="q28" value="D"> D.	Ashobah</label><br>
+            <label><input type="radio" name="q28" value="E"> E.	Nasabiah</label><br>
+            <p id="result_q28"></p><br>
+
+            <p>29.	Seorang hakim boleh langsung memutuskan perkara apabila sudah ada bukti. Di bawah ini yang bukan termasuk bukti adalah… .</p>
+            <label><input type="radio" name="q29" value="A"> A.	Sumpah penggugat</label><br>
+            <label><input type="radio" name="q29" value="B"> B.	Saksi yang menguatkan</label><br>
+            <label><input type="radio" name="q29" value="C"> C.	Keyakinan para hakim</label><br>
+            <label><input type="radio" name="q29" value="D"> D.	Bayyinah</label><br>
+            <label><input type="radio" name="q29" value="E"> E.	Pengkuan terdakwa</label><br>
+            <p id="result_q29"></p><br>
+
+            <p>30.	Orang yang mengajukan gugatan karena merasa dirugikan oleh pihak tergugat disebut…</p>
+            <label><input type="radio" name="q30" value="A"> A.	Mudda’i</label><br>
+            <label><input type="radio" name="q30" value="B"> B.	Mudda’a minhu</label><br>
+            <label><input type="radio" name="q30" value="C"> C.	Mudda’a ‘alaih</label><br>
+            <label><input type="radio" name="q30" value="D"> D.	Mubayyin</label><br>
+            <label><input type="radio" name="q30" value="E"> E.	Mubayyan</label><br>
+            <p id="result_q30"></p><br>
+
+            <p>31.	Salah seorang ulama yang membolehkan pengangkatan hakim wanita untuk segala macam urusan sebagaimana halnya hakim laki-laki adalah…</p>
+            <label><input type="radio" name="q31" value="A"> A.	Ibnu Jarir at-Thobari</label><br>
+            <label><input type="radio" name="q31" value="B"> B.	Imam Abu Hanifah</label><br>
+            <label><input type="radio" name="q31" value="C"> C.	Imam Malik bin Anas</label><br>
+            <label><input type="radio" name="q31" value="D"> D.	Imam asy-Syafi’i</label><br>
+            <label><input type="radio" name="q31" value="E"> E.	Imam Ahmad bin Hanbal</label><br>
+            <p id="result_q31"></p><br>
+
+            <p>32.	Hukum meminang wanita yang sudah dipinang saudaranya adalah…</p>
+            <label><input type="radio" name="q32" value="A"> A.	Wajib</label><br>
+            <label><input type="radio" name="q32" value="B"> B.	Sunnah</label><br>
+            <label><input type="radio" name="q32" value="C"> C.	Mubah</label><br>
+            <label><input type="radio" name="q32" value="D"> D.	Makruh</label><br>
+            <label><input type="radio" name="q32" value="E"> E.	Haram</label><br>
+            <p id="result_q32"></p><br>
+
+            <p>33.	Dasar hukum perkawinan di Indonesia diatur dalam undang-undang perkawinan…</p>
+            <label><input type="radio" name="q33" value="A"> A.	No 1 tahun 1874</label><br>
+            <label><input type="radio" name="q33" value="B"> B.	No 1 tahun 1974</label><br>
+            <label><input type="radio" name="q33" value="C"> C.	No 1 tahun 1977</label><br>
+            <label><input type="radio" name="q33" value="D"> D.	No 1 tahun 1975</label><br>
+            <label><input type="radio" name="q33" value="E"> E.	No 1 tahun 1976</label><br>
+            <p id="result_q33"></p><br>
+
+            <p>34.	Seorang wali yang berhak menikahkan anak perempuannya tanpa minta izin kepadanya disebut wali…</p>
+            <label><input type="radio" name="q34" value="A"> A.	Nasab</label><br>
+            <label><input type="radio" name="q34" value="B"> B.	Adhol</label><br>
+            <label><input type="radio" name="q34" value="C"> C.	Mujbir /label><br>
+            <label><input type="radio" name="q34" value="D"> D.	Hakim </label><br>
+            <label><input type="radio" name="q34" value="E"> E.	Muhakkam</label><br>
+            <p id="result_q34"></p><br>
+
+            <p>35.       تَزَوَّجْ وَلَوْ بِخَاتَمٍ مِنْ حَدِيْدٍ</p>
+	    <p>Hadits Rasulullah di atas terkait dengan pembahasan…</p>
+            <label><input type="radio" name="q35" value="A"> A.	Sumpah</label><br>
+            <label><input type="radio" name="q35" value="B"> B.	Ijab qabul</label><br>
+            <label><input type="radio" name="q35" value="C"> C.	Mahar</label><br>
+            <label><input type="radio" name="q35" value="D"> D.	Kesaksian</label><br>
+            <label><input type="radio" name="q35" value="E"> E.	Saksi nikah</label><br>
+            <p id="result_q35"></p><br>
+
+            <p>36.	Melepaskan ikatan pernikahan dari pihak suami dengan mengucapkan lafadz tertentu merupakan definisi dari…</p>
+            <label><input type="radio" name="q36" value="A"> A.	Khulu’</label><br>
+            <label><input type="radio" name="q36" value="B"> B.	Thalaq</label><br>
+            <label><input type="radio" name="q36" value="C"> C.	Fasakh</label><br>
+            <label><input type="radio" name="q36" value="D"> D.	Nusyuz’</label><br>
+            <label><input type="radio" name="q36" value="E"> E.	Iddah</label><br>
+            <p id="result_q36"></p><br>
+
+            <p>37.	Ilmu mawarits disebut juga…</p>
+            <label><input type="radio" name="q37" value="A"> A.	Ilmu hisab</label><br>
+            <label><input type="radio" name="q37" value="B"> B.	Ilmu faraidh</label><br>
+            <label><input type="radio" name="q37" value="C"> C.	lmu falak</label><br>
+            <label><input type="radio" name="q37" value="D"> D.	Ilmu taqsim</label><br>
+            <label><input type="radio" name="q37" value="E"> E.	Ilmu tauzi’</label><br>
+            <p id="result_q37"></p><br>
+
+            <p>38. Manfaat sistem informasi geografis (SIG) di bidang kehutanan adalah...</p>
+            <label><input type="radio" name="q38" value="A"> a. Analisis struktur dan tekstur tanah</label><br>
+            <label><input type="radio" name="q38" value="B"> b. Analisis banjir dan kerusakan lingkungan</label><br>
+            <label><input type="radio" name="q38" value="C"> c. Pemantauan aktivitas industri hasil hutan</label><br>
+            <label><input type="radio" name="q38" value="D"> d. Inventarisasi produksi tanaman keras</label><br>
+            <label><input type="radio" name="q38" value="E"> e. Pemantauan penebangan dan hasil hutan</label><br>
+            <p id="result_q38"></p><br>
+
+            <p>39.	Di bawah ini yang bukan termasuk al-furudh al-muqaddarah adalah…</p>
+            <label><input type="radio" name="q39" value="A"> A.	1/2</label><br>
+            <label><input type="radio" name="q39" value="B"> B.	1/3</label><br>
+            <label><input type="radio" name="q39" value="C"> C.	1/4</label><br>
+            <label><input type="radio" name="q39" value="D"> D.	1/5</label><br>
+            <label><input type="radio" name="q39" value="E"> E.	1/6</label><br>
+            <p id="result_q39"></p><br>
+
+            <p>40.	Pengurangan bagian dari harta warisan karena ada ahli waris lain yang membersamai dalam istilah ilmu mawarits disebut…</p>
+            <label><input type="radio" name="q40" value="A"> A.	Hijab Hirman</label><br>
+            <label><input type="radio" name="q40" value="B"> B.	Hijab Nuqshon</label><br>
+            <label><input type="radio" name="q40" value="C"> C.	Hijab Ikroh</label><br>
+            <label><input type="radio" name="q40" value="D"> D.	Hijab Tahrim</label><br>
+            <label><input type="radio" name="q40" value="E"> E.	Hijab ‘Atho’</label><br>
+            <p id="result_q40"></p><br>
+
+            <button class="button disabled" type="submit" id="submitButton" disabled>Submit Jawaban</button>
+        </form>
+        <p id="score"></p>
+        <a href="index.html" class="button">Kembali ke Beranda</a>
+    </div>
+
+    <script>
+        let timeLeft = 3600;
+        let timerElement = document.getElementById("timer");
+        let submitButton = document.getElementById("submitButton");
+
+        function updateTimer() {
+            let minutes = Math.floor(timeLeft / 60);
+            let seconds = timeLeft % 60;
+            timerElement.textContent = "Sisa Waktu: " + minutes + ":" + (seconds < 10 ? "0" : "") + seconds;
+            if (timeLeft > 0) {
+                timeLeft--;
+                setTimeout(updateTimer, 1000);
+            } else {
+                alert("Waktu habis! Jawaban akan dikoreksi.");
+                document.getElementById("quizForm").submit();
+            }
+        }
+
+        setTimeout(updateTimer, 1000);
+
+        function checkAllAnswered() {
+            let allAnswered = true;
+            let totalQuestions = 40;
+            for (let i = 1; i <= totalQuestions; i++) {
+                let answered = document.querySelector(`input[name="q${i}"]:checked`);
+                if (!answered) {
+                    allAnswered = false;
+                    break;
+                }
+            }
+            if (allAnswered) {
+                submitButton.disabled = false;
+                submitButton.classList.remove("disabled");
+            } else {
+                submitButton.disabled = true;
+                submitButton.classList.add("disabled");
+            }
+        }
+
+        document.querySelectorAll("input[type='radio']").forEach(input => {
+            input.addEventListener("change", checkAllAnswered);
+        });
+
+        document.getElementById("quizForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            let correctAnswers = {
+                q1: "C",
+                q2: "B",
+                q3: "A",
+                q4: "B",
+                q5: "D",
+                q6: "B",
+                q7: "A",
+                q8: "D",
+                q9: "A",
+                q10: "B",
+                q11: "C",
+                q12: "A",
+                q13: "C",
+                q14: "A",
+                q15: "E",
+                q16: "D",
+                q17: "C",
+                q18: "B",
+                q19: "E",
+                q20: "C",
+                q21: "A",
+                q22: "D",
+                q23: "B",
+                q24: "D",
+                q25: "E",
+                q26: "B",
+                q27: "D",
+                q28: "D",
+                q29: "C",
+                q30: "A",
+                q31: "A",
+                q32: "E",
+                q33: "B",
+                q34: "C",
+                q35: "C",
+                q36: "B",
+                q37: "B",
+                q38: "C",
+                q39: "D",
+                q40: "C"
+
+            };
+            let score = 0;
+
+            for (let key in correctAnswers) {
+                let selected = document.querySelector(`input[name="${key}"]:checked`);
+                let resultElement = document.getElementById(`result_${key}`);
+
+                if (selected) {
+                    if (selected.value === correctAnswers[key]) {
+                        score += 2.5;
+                        resultElement.innerHTML = "✔ Benar";
+                        resultElement.className = "correct";
+                    } else {
+                        resultElement.innerHTML = `✘ Salah, Jawaban Benar: ${correctAnswers[key]}`;
+                        resultElement.className = "wrong";
+                    }
+                }
+            }
+
+            document.getElementById("score").innerHTML = `<strong>Skor Anda: ${score} dari 100</strong>`;
+        });
+    </script>
+</body>
+</html>
