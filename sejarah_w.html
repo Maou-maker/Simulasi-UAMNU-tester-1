@@ -3,44 +3,498 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pesan dari Senku</title>
+    <title>Ujian Sejarah Wajib</title>
     <style>
         body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-            height: 100vh;
-            background-color: #f8f9fa;
-            text-align: center;
+            font-family: Arial, sans-serif;
+            text-align: left;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 20px;
         }
-        .senku {
-            width: 200px;
-        }
-        .message {
-            margin-top: 20px;
-            font-weight: bold;
-            font-size: 16px;
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
         }
         .button {
-            margin-top: 20px;
-            padding: 10px 20px;
-            background-color: green;
-            color: white;
+            background-color: #00bfff;
             border: 2px solid black;
-            border-radius: 5px;
+            padding: 10px 20px;
+            font-size: 18px;
+            border-radius: 20px;
+            cursor: pointer;
+            margin: 10px;
             text-decoration: none;
-            font-size: 16px;
+            color: black;
+            display: inline-block;
         }
         .button:hover {
-            background-color: darkgreen;
+            background-color: #009acd;
+        }
+        #timer {
+            font-size: 20px;
+            font-weight: bold;
+            color: red;
+            margin-bottom: 20px;
+        }
+        .disabled {
+            background-color: gray;
+            cursor: not-allowed;
+        }
+        .correct {
+            color: green;
+            font-weight: bold;
+        }
+        .wrong {
+            color: red;
+            font-weight: bold;
         }
     </style>
 </head>
 <body>
-    <img src="https://img.amiami.com/images/product/main/244/GOODS-04569247.jpg" class="senku" alt="Senku Ishigami">
-    <p class="message">Sabar kawan ku<br>100 miliar persen, akan segera bisa diakses.<br>Sekarang kembali ke beranda sebelum Stukasa datang.</p>
-    <a href="index.html" class="button">Kembali ke Beranda</a>
+    <div class="container">
+        <h2>Ujian Sejarah Wjib</h2>
+        <p id="timer">Sisa Waktu: 60:00</p>
+        <form id="quizForm">
+            <p>1. Objek utama dalam sejarah adalah  manusia, sehingga menjadi kajian utama dalam ilmu sejarah, akibat yang muncul apabila manusia hidup tanpa sejarah adalah..... ..</p>
+            <label><input type="radio" name="q1" value="A"> a. Pilihan A</label><br>
+            <label><input type="radio" name="q1" value="B"> b. Pilihan B</label><br>
+            <label><input type="radio" name="q1" value="C"> c. Pilihan C</label><br>
+            <label><input type="radio" name="q1" value="D"> d. Pilihan D</label><br>
+            <label><input type="radio" name="q1" value="E"> e. Pilihan E</label><br>
+            <p id="result_q1"></p><br>
+
+            <p>2. Persamaan fungsi kuadrat yang titik puncaknya (1,2) dan melalui (0 , 4) adalah…</p>
+            <label><input type="radio" name="q2" value="A"> a. Pilihan A</label><br>
+            <label><input type="radio" name="q2" value="B"> b. Pilihan B</label><br>
+            <label><input type="radio" name="q2" value="C"> c. Pilihan C</label><br>
+            <label><input type="radio" name="q2" value="D"> d. Pilihan D</label><br>
+            <label><input type="radio" name="q2" value="E"> e. Pilihan E</label><br>
+            <p id="result_q2"></p><br>
+
+	    <p>3.	Berapakah lama waktu permainan sepak bola......</p>
+	    <label><input type="radio" name="q3" value="A"> a.	2 x 45 menit</label><br>
+	    <label><input type="radio" name="q3" value="B"> b.	2 x 10 menit</label><br>
+	    <label><input type="radio" name="q3" value="C"> c.	3 x 40 menit</label><br>
+	    <label><input type="radio" name="q3" value="D"> d.	3 x 10 menit</label><br>
+	    <label><input type="radio" name="q3" value="E"> e.	4 x 30 menit</label><br>
+	    <p id="result_q3"></p><br>
+
+	    <p>4.	Keberhasilan saat melakukan blok ditentukan oleh.......</p>
+	    <label><input type="radio" name="q4" value="A"> a.	Tumpuan</label><br>
+	    <label><input type="radio" name="q4" value="B"> b.	Lompatan</label><br>
+	    <label><input type="radio" name="q4" value="C"> c.	Tangan yang panjang</label><br>
+	    <label><input type="radio" name="q4" value="D"> d.	Smash yang keras</label><br>
+	    <label><input type="radio" name="q4" value="E"> e.	Tolakan</label><br>
+	    <p id="result_q4"></p><br>
+
+	    <p>5.	Induk organisasi bola voli di Indonesia adalah......</p>
+	    <label><input type="radio" name="q5" value="A"> a.	Perbasi</label><br>
+	    <label><input type="radio" name="q5" value="B"> b.	Persami</label><br>
+	    <label><input type="radio" name="q5" value="C"> c.	PBVSI</label><br>
+	    <label><input type="radio" name="q5" value="D"> d.	PSSI</label><br>
+	    <label><input type="radio" name="q5" value="E"> e.	e.	PBFI</label><br>
+	    <p id="result_q5"></p><br>
+
+	    <p6.	Penemu  permainan bola basket  ialah....</p>
+	    <label><input type="radio" name="q6" value="A"> a.	James Naismith</label><br>
+	    <label><input type="radio" name="q6" value="B"> b.	William G. Morgan</label><br>
+	    <label><input type="radio" name="q6" value="C"> c.	George Hancock</label><br>
+	    <label><input type="radio" name="q6" value="D"> d.	Hiram maxim</label><br>
+	    <label><input type="radio" name="q6" value="E"> e.	Thomas Alva Edison</label><br>
+	    <p id="result_q6"></p><br>
+
+	    <p>7.	Operan bola basket yang dilakukan diatas kepala disebut...</p>
+	    <label><input type="radio" name="q7" value="A"> a.	Dribble</label><br>
+	    <label><input type="radio" name="q7" value="B"> b.	Chest pass</label><br>
+	    <label><input type="radio" name="q7" value="C"> c.	Overhead pass</label><br>
+	    <label><input type="radio" name="q7" value="D"> d.	Shooting</label><br>
+	    <label><input type="radio" name="q7" value="E"> e.	Rebound</label><br>
+	    <p id="result_q7"></p><br>
+
+	    <p>8.	Berikut ini yang bukan merupakan jenis-jenis olahraga permainan bola kecil adalah...........</p>
+	    <label><input type="radio" name="q8" value="A"> a.	Tenis meja</label><br>
+	    <label><input type="radio" name="q8" value="B"> b.	Sepak bola</label><br>
+	    <label><input type="radio" name="q8" value="C"> c.	Softball</label><br>
+	    <label><input type="radio" name="q8" value="D"> d.	Rounders</label><br>
+	    <label><input type="radio" name="q8" value="E"> e.	Kasti</label><br>
+	    <p id="result_q8"></p><br>
+
+	    <p>9.	Seorang pemainan softball mendapat kesempatan memukul bola sebanyak........</p>
+	    <label><input type="radio" name="q9" value="A"> a.	1 kali</label><br>
+	    <label><input type="radio" name="q9" value="B"> b.	2 kali</label><br>
+	    <label><input type="radio" name="q9" value="C"> c.	3 kali</label><br>
+	    <label><input type="radio" name="q9" value="D"> d.	4 kali</label><br>
+	    <label><input type="radio" name="q9" value="E"> e.	5 kali</label><br>
+	    <p id="result_q9"></p><br>
+
+	    <p>10.	Dibawah ini yang tiak termasuk pukulan dalam bulu tangkis adalah.........</p>
+	    <label><input type="radio" name="q10" value="A"> a.	Dropshot</label><br>
+	    <label><input type="radio" name="q10" value="B"> b.	Service</label><br>
+	    <label><input type="radio" name="q10" value="C"> c.	Lob</label><br>
+	    <label><input type="radio" name="q10" value="D"> d.	Smash</label><br>
+	    <label><input type="radio" name="q10" value="E"> e.	Topspin</label><br>
+	    <p id="result_q10"></p><br>
+
+	    <p>11.	Teknik dalam lompat jauh setelah melakukan awalan adalah.........</p>
+	    <label><input type="radio" name="q11" value="A"> a.	Mendarat</label><br>
+	    <label><input type="radio" name="q11" value="B"> b.	Melayang</label><br>
+	    <label><input type="radio" name="q11" value="C"> c.	Melinting</label><br>
+	    <label><input type="radio" name="q11" value="D"> d.	Melangkah</label><br>
+	    <label><input type="radio" name="q11" value="E"> e.	Menolak</label><br>
+	    <p id="result_q11"></p><br>
+
+	    <p>12.	 Rangkaian gerakan lompat jauh adalah........</p>
+	    <label><input type="radio" name="q12" value="A"> a.	Berlari secepatnya, menolak dan mendarat</label><br>
+	    <label><input type="radio" name="q12" value="B"> b.	Berlari secepatnya, mendarat, menolak dan melayang</label><br>
+	    <label><input type="radio" name="q12" value="C"> c.	Berlari secepatnya, menolak, lari dan melayang</label><br>
+	    <label><input type="radio" name="q12" value="D"> d.	Berlari secepatnya, menolak, melayang di udara, dan mendarat</label><br>
+	    <label><input type="radio" name="q12" value="E"> e.	Berlari secepatnya, dan mendarat</label><br>
+	    <p id="result_q12"></p><br>
+
+	    <p>13.	Posisi kedua tangan pada saat mendarat dalam lompat jauh adalah............</p>
+	    <label><input type="radio" name="q13" value="A"> a.	Diayun dan diluruskan ke depan</label><br>
+	    <label><input type="radio" name="q13" value="B"> b.	Diluruskan ke belakang</label><br>
+	    <label><input type="radio" name="q13" value="C"> c.	Diayun kesamping</label><br>
+	    <label><input type="radio" name="q13" value="D"> d.	Diayun ke belakang</label><br>
+	    <label><input type="radio" name="q13" value="E"> e.	Diayun ke atas</label><br>
+	    <p id="result_q13"></p><br>
+
+	    <p>14.	Pada saat melayang di udara yang perlu diperhatikan adalah.......</p>
+	    <label><input type="radio" name="q14" value="A"> a.	Menjaga keseimbangan</label><br>
+	    <label><input type="radio" name="q14" value="B"> b.	Menjaga kelenturan</label><br>
+	    <label><input type="radio" name="q14" value="C"> c.	Menjaga gerak kaki</label><br>
+	    <label><input type="radio" name="q14" value="D"> d.	Menjaga konsentrasi</label><br>
+	    <label><input type="radio" name="q14" value="E"> e.	Menjaga letak kaki</label><br>
+	    <p id="result_q14"></p><br>
+
+	    <p>15.	Lompat tinggi gaya straddle dinamakan juga gaya.......</p>
+	    <label><input type="radio" name="q15" value="A"> a.	Gaya samping</label><br>
+	    <label><input type="radio" name="q15" value="B"> b.	Gunting</label><br>
+	    <label><input type="radio" name="q15" value="C"> c.	Lompat pagar</label><br>
+	    <label><input type="radio" name="q15" value="D"> d.	Dada</label><br>
+	    <label><input type="radio" name="q15" value="E"> e.	Guling perut</label><br>
+	    <p id="result_q15"></p><br>
+
+            <p>16. Mendarat pada lompat tinggi gaya straddle, bagian tubuh mana yang menyentuh matras terlebih dahulu yaitu........</p>
+            <label><input type="radio" name="q16" value="A"> a. Kepala</label><br>
+            <label><input type="radio" name="q16" value="B"> b. Kaki</label><br>
+            <label><input type="radio" name="q16" value="C"> c. Pinggang</label><br>
+            <label><input type="radio" name="q16" value="D"> d. Lutut</label><br>
+            <label><input type="radio" name="q16" value="E"> e. Punggung</label><br>
+            <p id="result_q16"></p><br>
+
+            <p>17. Nama lain dari lompat tinggi yaitu....</p>
+            <label><input type="radio" name="q17" value="A"> a. Long up</label><br>
+            <label><input type="radio" name="q17" value="B"> b. High jump</label><br>
+            <label><input type="radio" name="q17" value="C"> c. Jumping</label><br>
+            <label><input type="radio" name="q17" value="D"> d. High up</label><br>
+            <label><input type="radio" name="q17" value="E"> e. Long up</label><br>
+            <p id="result_q17"></p><br>
+
+            <p>18. Timer adalah petugas pada perlombaan lari yang bertugas….</p>
+            <label><input type="radio" name="q18" value="A"> a. Mencatat waktu</label><br>
+            <label><input type="radio" name="q18" value="B"> b. Mengawasi pelari</label><br>
+            <label><input type="radio" name="q18" value="C"> c. Juri kedatangan</label><br>
+            <label><input type="radio" name="q18" value="D"> d. Memberangkatkan pelari</label><br>
+            <label><input type="radio" name="q18" value="E"> e. Petugas skor</label><br>
+            <p id="result_q18"></p><br>
+
+            <p>19. Loncat kangkang di atas peti lompat termasuk ke dalam olahraga......</p>
+            <label><input type="radio" name="q19" value="A"> a. Senam aerobik</label><br>
+            <label><input type="radio" name="q19" value="B"> b. Senam Akuatik</label><br>
+            <label><input type="radio" name="q19" value="C"> c. Senam irama</label><br>
+            <label><input type="radio" name="q19" value="D"> d. Senam Ketangkasan dengan alat</label><br>
+            <label><input type="radio" name="q19" value="E"> e. Senam ketangkasan tanpa alat</label><br>
+            <p id="result_q19"></p><br>
+
+            <p>20. Pencak silat adalah salah satu cabang olahraga beladiri berasal dari negara.....</p>
+            <label><input type="radio" name="q20" value="A"> a. Cina</label><br>
+            <label><input type="radio" name="q20" value="B"> b. Hongkong</label><br>
+            <label><input type="radio" name="q20" value="C"> c. Jepang</label><br>
+            <label><input type="radio" name="q20" value="D"> d. Vietnam</label><br>
+            <label><input type="radio" name="q20" value="E"> e. Indonesia</label><br>
+            <p id="result_q20"></p><br>
+
+            <p>21. Berikut ini jenis-jenis tendangan dalam olahraga pencaksilat, kecuali......</p>
+            <label><input type="radio" name="q21" value="A"> a. Tendangan T</label><br>
+            <label><input type="radio" name="q21" value="B"> b. Tendangan sabit</label><br>
+            <label><input type="radio" name="q21" value="C"> c. Tendangan lurus</label><br>
+            <label><input type="radio" name="q21" value="D"> d. Tendangan jejag</label><br>
+            <label><input type="radio" name="q21" value="E"> e. Tendangan Halilintar</label><br>
+            <p id="result_q21"></p><br>
+
+            <p>22. Induk Organisasi pencaksilat di Indonesia adalah....</p>
+            <label><input type="radio" name="q22" value="A"> a. PSSI</label><br>
+            <label><input type="radio" name="q22" value="B"> b. PTMSI</label><br>
+            <label><input type="radio" name="q22" value="C"> c. IPSI</label><br>
+            <label><input type="radio" name="q22" value="D"> d. PBVSI</label><br>
+            <label><input type="radio" name="q22" value="E"> e. FORKI</label><br>
+            <p id="result_q22"></p><br>
+
+            <p>23. Gerakan tangkisan merupakan salah satu gerakan dari…</p>
+            <label><input type="radio" name="q23" value="A"> a. Hindaran</label><br>
+            <label><input type="radio" name="q23" value="B"> b. Serangan</label><br>
+            <label><input type="radio" name="q23" value="C"> c. Tendangan</label><br>
+            <label><input type="radio" name="q23" value="D"> d. Belaan</label><br>
+            <label><input type="radio" name="q23" value="E"> e. Pukulan</label><br>
+            <p id="result_q23"></p><br>
+
+            <p>24. Tujuan dari pencaksilat adalah....</p>
+            <label><input type="radio" name="q24" value="A"> a. Menunjukan kekuatan</label><br>
+            <label><input type="radio" name="q24" value="B"> b. Menjatuhkan lawan</label><br>
+            <label><input type="radio" name="q24" value="C"> c. Membela diri</label><br>
+            <label><input type="radio" name="q24" value="D"> d. Melatih kekuatan</label><br>
+            <label><input type="radio" name="q24" value="E"> e. Menjaga persatuan</label><br>
+            <p id="result_q24"></p><br>
+
+            <p>25. Bagian tubuh yang dapat digunakan untuk menangkis tendangan depan adalah….</p>
+            <label><input type="radio" name="q25" value="A"> a. Tangan</label><br>
+            <label><input type="radio" name="q25" value="B"> b. Siku</label><br>
+            <label><input type="radio" name="q25" value="C"> c. Lutut</label><br>
+            <label><input type="radio" name="q25" value="D"> d. Dada</label><br>
+            <label><input type="radio" name="q25" value="E"> e. Kepala</label><br>
+            <p id="result_q25"></p><br>
+
+            <p>26. Pada latihan dasar kuda-kuda, yang perlu diperhatikan adalah....</p>
+            <label><input type="radio" name="q26" value="A"> a. Tumpuan kaki</label><br>
+            <label><input type="radio" name="q26" value="B"> b. Pandangan</label><br>
+            <label><input type="radio" name="q26" value="C"> c. Sikap tangan</label><br>
+            <label><input type="radio" name="q26" value="D"> d. Sikap badan</label><br>
+            <label><input type="radio" name="q26" value="E"> e. Semua benar</label><br>
+            <p id="result_q26"></p><br>
+
+            <p>27. High pull merupakan bentuk latihan mendorong beban....</p>
+            <label><input type="radio" name="q27" value="A"> a. Ke atas</label><br>
+            <label><input type="radio" name="q27" value="B"> b. Ke samping</label><br>
+            <label><input type="radio" name="q27" value="C"> c. Ke bawah</label><br>
+            <label><input type="radio" name="q27" value="D"> d. Ke depan</label><br>
+            <label><input type="radio" name="q27" value="E"> e. Ke luar</label><br>
+            <p id="result_q27"></p><br>
+
+            <p>28. Kemampuan menempuh jarak dalam waktu sesingkat-singkatnya disebut....</p>
+            <label><input type="radio" name="q28" value="A"> a. Kekuatan</label><br>
+            <label><input type="radio" name="q28" value="B"> b. Kelincahan</label><br>
+            <label><input type="radio" name="q28" value="C"> c. Kelentukan</label><br>
+            <label><input type="radio" name="q28" value="D"> d. Kecepatan</label><br>
+            <label><input type="radio" name="q28" value="E"> e. Back up</label><br>
+            <p id="result_q28"></p><br>
+
+            <p>29. Lari bolak-balik sering disebut.....</p>
+            <label><input type="radio" name="q29" value="A"> a. Joging</label><br>
+            <label><input type="radio" name="q29" value="B"> b. Squat jump</label><br>
+            <label><input type="radio" name="q29" value="C"> c. Shuttle run</label><br>
+            <label><input type="radio" name="q29" value="D"> d. Up hill</label><br>
+            <label><input type="radio" name="q29" value="E"> e. Pull up</label><br>
+            <p id="result_q29"></p><br>
+
+            <p>30. Push bertujuan untuk melatih.....</p>
+            <label><input type="radio" name="q30" value="A"> a. Tangan</label><br>
+            <label><input type="radio" name="q30" value="B"> b. Kaki</label><br>
+            <label><input type="radio" name="q30" value="C"> c. Bahu</label><br>
+            <label><input type="radio" name="q30" value="D"> d. Perut</label><br>
+            <label><input type="radio" name="q30" value="E"> e. Dada</label><br>
+            <p id="result_q30"></p><br>
+
+            <p>31. Pada renang gaya bebas gerakan kaki yang benar adalah....</p>
+            <label><input type="radio" name="q31" value="A"> a. Kaki diayunkan kedepan dan kebelakang</label><br>
+            <label><input type="radio" name="q31" value="B"> b. Kaki diayunkan kesamping kanan dan kiri</label><br>
+            <label><input type="radio" name="q31" value="C"> c. Kaki didorong kebelakang</label><br>
+            <label><input type="radio" name="q31" value="D"> d. Kaki ditekuk dan didorongkan</label><br>
+            <label><input type="radio" name="q31" value="E"> e. Naik turun memukul permukaan air</label><br>
+            <p id="result_q31"></p><br>
+
+            <p>32. Gaya dalam cabang olahraga renang yang tidak terikat dengan teknik-teknik tertentu adalah....</p>
+            <label><input type="radio" name="q32" value="A"> a. Renang gaya bebas</label><br>
+            <label><input type="radio" name="q32" value="B"> b. Renang gaya dada</label><br>
+            <label><input type="radio" name="q32" value="C"> c. Renang gaya punggung</label><br>
+            <label><input type="radio" name="q32" value="D"> d. Renang gaya katak</label><br>
+            <label><input type="radio" name="q32" value="E"> e. Renang gaya kupu-kupu</label><br>
+            <p id="result_q32"></p><br>
+
+            <p>43. Pernapasan yang dilakukan waktu renang dalam air yaitu.....</p>
+            <label><input type="radio" name="q33" value="A"> a. Paru-paru</label><br>
+            <label><input type="radio" name="q33" value="B"> b. Mulut</label><br>
+            <label><input type="radio" name="q33" value="C"> c. Hidung</label><br>
+            <label><input type="radio" name="q33" value="D"> d. Perut</label><br>
+            <label><input type="radio" name="q33" value="E"> e. Dada</label><br>
+            <p id="result_q33"></p><br>
+    
+            <p>44. Berikut ini merupakan jenis-jenis narkoba kecuali, yaitu.....</p>
+            <label><input type="radio" name="q34" value="A"> a. Narkotika</label><br>
+            <label><input type="radio" name="q34" value="B"> b. Psikotropika</label><br>
+            <label><input type="radio" name="q34" value="C"> c. Nikotin</label><br>
+            <label><input type="radio" name="q34" value="D"> d. Alkohol</label><br>
+            <label><input type="radio" name="q34" value="E"> e. Soda</label><br>
+            <p id="result_q34"></p><br>
+    
+            <p>45. Berikut ini merupakan risiko penyalahgunaan narkoba, yaitu.....</p>
+            <label><input type="radio" name="q35" value="A"> a. Kebugaran</label><br>
+            <label><input type="radio" name="q35" value="B"> b. Meningkatkan daya tahan tubuh</label><br>
+            <label><input type="radio" name="q35" value="C"> c. Menambah nafsu</label><br>
+            <label><input type="radio" name="q35" value="D"> d. Kecanduan</label><br>
+            <label><input type="radio" name="q35" value="E"> e. Kelaparan</label><br>
+            <p id="result_q35"></p><br>
+            
+            <p>46. Bakteri Neisseria merupakan penyebab penyakit….</p>
+            <label><input type="radio" name="q36" value="A"> a. Gonore</label><br>
+            <label><input type="radio" name="q36" value="B"> b. HIV</label><br>
+            <label><input type="radio" name="q36" value="C"> c. Klamidia</label><br>
+            <label><input type="radio" name="q36" value="D"> d. AIDS</label><br>
+            <label><input type="radio" name="q36" value="E"> e. Sifilis</label><br>
+            <p id="result_q36"></p><br>
+    
+            <p>47. Pernyataan yang tepat tentang penyakit AIDS adalah….</p>
+            <label><input type="radio" name="q47" value="A"> a. Penyakit menular yang menyerang seluruh kekebalan tubuh</label><br>
+            <label><input type="radio" name="q47" value="B"> b. Menyerang tubuh</label><br>
+            <label><input type="radio" name="q47" value="C"> c. Menyerang sebagian tubuh</label><br>
+            <label><input type="radio" name="q47" value="D"> d. Penyakit menular</label><br>
+            <label><input type="radio" name="q47" value="E"> e. Penyakit ngeri</label><br>
+            <p id="result_q47"></p><br>
+    
+            <p>48. Sebab yang paling dominan mempermudah terkena virus HIV adalah</p>
+            <label><input type="radio" name="q38" value="A"> a. Ibu hamil</label><br>
+            <label><input type="radio" name="q38" value="B"> b. Jarum suntik</label><br>
+            <label><input type="radio" name="q38" value="C"> c. Renang di kolam renang</label><br>
+            <label><input type="radio" name="q38" value="D"> d. Minum dengan gelas yang sama</label><br>
+            <label><input type="radio" name="q38" value="E"> e. Makan dengan sendok yang sama</label><br>
+            <p id="result_q38"></p><br>
+    
+            <p>49. Sifilis adalah penyakit yang terjadi pada tubuh bagian…</p>
+            <label><input type="radio" name="q39" value="A"> a. Mulut</label><br>
+            <label><input type="radio" name="q39" value="B"> b. Kelamin</label><br>
+            <label><input type="radio" name="q39" value="C"> c. Usus</label><br>
+            <label><input type="radio" name="q39" value="D"> d. Kaki</label><br>
+            <label><input type="radio" name="q39" value="E"> e. Tangan</label><br>
+            <p id="result_q39"></p><br>
+    
+            <p>50. Berikut bukan termasuk PMS adalah…</p>
+            <label><input type="radio" name="q40" value="A"> a. Herpes</label><br>
+            <label><input type="radio" name="q40" value="B"> b. Klamidia</label><br>
+            <label><input type="radio" name="q40" value="C"> c. Gonore</label><br>
+            <label><input type="radio" name="q40" value="D"> d. Sifilis</label><br>
+            <label><input type="radio" name="q40" value="E"> e. Hipotensi</label><br>
+            <p id="result_q40"></p><br>
+
+
+            <button class="button disabled" type="submit" id="submitButton" disabled>Submit Jawaban</button>
+        </form>
+        <p id="score"></p>
+        <a href="index.html" class="button">Kembali ke Beranda</a>
+    </div>
+
+    <script>
+        let timeLeft = 3600;
+        let timerElement = document.getElementById("timer");
+        let submitButton = document.getElementById("submitButton");
+
+        function updateTimer() {
+            let minutes = Math.floor(timeLeft / 60);
+            let seconds = timeLeft % 60;
+            timerElement.textContent = "Sisa Waktu: " + minutes + ":" + (seconds < 10 ? "0" : "") + seconds;
+            if (timeLeft > 0) {
+                timeLeft--;
+                setTimeout(updateTimer, 1000);
+            } else {
+                alert("Waktu habis! Jawaban akan dikoreksi.");
+                document.getElementById("quizForm").submit();
+            }
+        }
+
+        setTimeout(updateTimer, 1000);
+
+        function checkAllAnswered() {
+            let allAnswered = true;
+            let totalQuestions = 40;
+            for (let i = 1; i <= totalQuestions; i++) {
+                let answered = document.querySelector(`input[name="q${i}"]:checked`);
+                if (!answered) {
+                    allAnswered = false;
+                    break;
+                }
+            }
+            if (allAnswered) {
+                submitButton.disabled = false;
+                submitButton.classList.remove("disabled");
+            } else {
+                submitButton.disabled = true;
+                submitButton.classList.add("disabled");
+            }
+        }
+
+        document.querySelectorAll("input[type='radio']").forEach(input => {
+            input.addEventListener("change", checkAllAnswered);
+        });
+
+        document.getElementById("quizForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            let correctAnswers = {
+                q1: "C",
+                q2: "B",
+                q3: "B",
+                q4: "A",
+                q5: "B",
+                q6: "E",
+                q7: "A",
+                q8: "E",
+                q9: "A",
+                q10: "E",
+                q11: "C",
+                q12: "C",
+                q13: "A",
+                q14: "C",
+                q15: "B",
+                q16: "B",
+                q17: "C",
+                q18: "C",
+                q19: "A",
+                q20: "B",
+                q21: "B",
+                q22: "B",
+                q23: "E",
+                q24: "A",
+                q25: "A",
+                q26: "B",
+                q27: "D",
+                q28: "A",
+                q29: "B",
+                q30: "A",
+                q31: "B",
+                q32: "C",
+                q33: "D",
+                q34: "E",
+                q35: "B",
+                q36: "E",
+                q37: "A",
+                q38: "D",
+                q39: "B",
+                q40: "B"
+
+            };
+            let score = 0;
+
+            for (let key in correctAnswers) {
+                let selected = document.querySelector(`input[name="${key}"]:checked`);
+                let resultElement = document.getElementById(`result_${key}`);
+
+                if (selected) {
+                    if (selected.value === correctAnswers[key]) {
+                        score += 2.5;
+                        resultElement.innerHTML = "✔ Benar";
+                        resultElement.className = "correct";
+                    } else {
+                        resultElement.innerHTML = `✘ Salah, Jawaban Benar: ${correctAnswers[key]}`;
+                        resultElement.className = "wrong";
+                    }
+                }
+            }
+
+            document.getElementById("score").innerHTML = `<strong>Skor Anda: ${score} dari 100</strong>`;
+        });
+    </script>
 </body>
 </html>
-
