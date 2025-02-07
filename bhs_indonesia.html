@@ -475,50 +475,59 @@
     </div>
 
     <script>
-        let timeLeft = 3600;
-        let timerElement = document.getElementById("timer");
-        let submitButton = document.getElementById("submitButton");
+    let timeLeft = 3600;
+    let timerElement = document.getElementById("timer");
+    let submitButton = document.getElementById("submitButton");
+    let formSubmitted = false;
 
-        function updateTimer() {
-            let minutes = Math.floor(timeLeft / 60);
-            let seconds = timeLeft % 60;
-            timerElement.textContent = "Sisa Waktu: " + minutes + ":" + (seconds < 10 ? "0" : "") + seconds;
-            if (timeLeft > 0) {
-                timeLeft--;
-                setTimeout(updateTimer, 1000);
-            } else {
-                alert("Waktu habis! Jawaban akan dikoreksi.");
+    function updateTimer() {
+        let minutes = Math.floor(timeLeft / 60);
+        let seconds = timeLeft % 60;
+        timerElement.textContent = "Sisa Waktu: " + minutes + ":" + (seconds < 10 ? "0" : "") + seconds;
+        if (timeLeft > 0) {
+            timeLeft--;
+            setTimeout(updateTimer, 1000);
+        } else {
+            alert("Waktu habis! Jawaban akan dikoreksi.");
+            if (!formSubmitted) {
                 document.getElementById("quizForm").submit();
+                formSubmitted = true;
             }
         }
+    }
 
-        setTimeout(updateTimer, 1000);
+    setTimeout(updateTimer, 1000);
 
-        function checkAllAnswered() {
-            let allAnswered = true;
-            let totalQuestions = 40;
-            for (let i = 1; i <= totalQuestions; i++) {
-                let answered = document.querySelector(`input[name="q${i}"]:checked`);
-                if (!answered) {
-                    allAnswered = false;
-                    break;
-                }
-            }
-            if (allAnswered) {
-                submitButton.disabled = false;
-                submitButton.classList.remove("disabled");
-            } else {
-                submitButton.disabled = true;
-                submitButton.classList.add("disabled");
+    function checkAllAnswered() {
+        let allAnswered = true;
+        let totalQuestions = 40;
+        for (let i = 1; i <= totalQuestions; i++) {
+            let answered = document.querySelector(`input[name="q${i}"]:checked`);
+            if (!answered) {
+                allAnswered = false;
+                break;
             }
         }
+        if (allAnswered && !formSubmitted) {
+            submitButton.disabled = false;
+            submitButton.classList.remove("disabled");
+        } else {
+            submitButton.disabled = true;
+            submitButton.classList.add("disabled");
+        }
+    }
 
-        document.querySelectorAll("input[type='radio']").forEach(input => {
-            input.addEventListener("change", checkAllAnswered);
-        });
+    document.querySelectorAll("input[type='radio']").forEach(input => {
+        input.addEventListener("change", checkAllAnswered);
+    });
 
-        document.getElementById("quizForm").addEventListener("submit", function(event) {
-            event.preventDefault();
+    document.getElementById("quizForm").addEventListener("submit", function(event) {
+        event.preventDefault();
+        if (formSubmitted) return;
+        formSubmitted = true;
+        submitButton.disabled = true;
+        submitButton.style.backgroundColor = "red";
+        submitButton.textContent = "Submit selesai digunakan 1x";
             let correctAnswers = {
                 q1: "A",
                 q2: "E",
