@@ -3,44 +3,585 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pesan dari Senku</title>
+    <title>Ujian Bhs. Indonesia</title>
     <style>
         body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-            height: 100vh;
-            background-color: #f8f9fa;
-            text-align: center;
+            font-family: Arial, sans-serif;
+            text-align: left;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 20px;
         }
-        .senku {
-            width: 200px;
-        }
-        .message {
-            margin-top: 20px;
-            font-weight: bold;
-            font-size: 16px;
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
         }
         .button {
-            margin-top: 20px;
-            padding: 10px 20px;
-            background-color: green;
-            color: white;
+            background-color: #00bfff;
             border: 2px solid black;
-            border-radius: 5px;
+            padding: 10px 20px;
+            font-size: 18px;
+            border-radius: 20px;
+            cursor: pointer;
+            margin: 10px;
             text-decoration: none;
-            font-size: 16px;
+            color: black;
+            display: inline-block;
         }
         .button:hover {
-            background-color: darkgreen;
+            background-color: #009acd;
+        }
+        #timer {
+            font-size: 20px;
+            font-weight: bold;
+            color: red;
+            margin-bottom: 20px;
+        }
+        .disabled {
+            background-color: gray;
+            cursor: not-allowed;
+        }
+        .correct {
+            color: green;
+            font-weight: bold;
+        }
+        .wrong {
+            color: red;
+            font-weight: bold;
         }
     </style>
 </head>
 <body>
-    <img src="https://img.amiami.com/images/product/main/244/GOODS-04569247.jpg" class="senku" alt="Senku Ishigami">
-    <p class="message">Sabar kawan ku<br>100 miliar persen, akan segera bisa diakses.<br>Sekarang kembali ke beranda sebelum Stukasa datang.</p>
-    <a href="index.html" class="button">Kembali ke Beranda</a>
+    <div class="container">
+        <h2>Ujian Bhs. Indonesia</h2>
+        <p id="timer">Sisa Waktu: 60:00</p>
+        <form id="quizForm">
+            <p>1. Perhatikan kutipan paragraf berikut!<br>
+            Perekonomian dunia tumbuh melambat. Dahulu ketika dunia mengalami resesi, negara-negara berkembang yang perekonomiannya tumbuh dengan cepat telah membantu menyelamatkan dunia. Namun, ada satu masalah yang bisa menjadi penghalang berulangnya sejarah tersebut. Masalah tersebut adalah menguatnya dolar AS terhadap mata uang negara-negara di dunia. Fenomena tersebut sering disebut strong dollar.<br>
+            Ide pokok paragraf tersebut adalah...</p>
+            <label><input type="radio" name="q1" value="A"> a. Perekonomian dunia tumbuh melambat</label><br>
+            <label><input type="radio" name="q1" value="B"> b. Dunia mengalami resesi</label><br>
+            <label><input type="radio" name="q1" value="C"> c. Perekonomian negara berkembang</label><br>
+            <label><input type="radio" name="q1" value="D"> d. Perekonomian tumbuh dengan cepat</label><br>
+            <label><input type="radio" name="q1" value="E"> e. Menguatnya dolar AS terhadap mata uang negara-negara di dunia</label><br>
+            <p id="result_q1"></p><br>
+
+            <p>2. Perhatikan kutipan paragraf berikut!<br>
+            Perekonomian dunia tumbuh melambat. Dahulu ketika dunia mengalami resesi, negara-negara berkembang yang perekonomiannya tumbuh dengan cepat telah membantu menyelamatkan dunia. Namun, ada satu masalah yang bisa menjadi penghalang berulangnya sejarah tersebut. Masalah tersebut adalah menguatnya dolar AS terhadap mata uang negara-negara di dunia. Fenomena tersebut sering disebut strong dollar.<br>
+            Makna kata "resesi" pada paragraf adalah...</p>
+            <label><input type="radio" name="q2" value="A"> a. Kemajuan dalam kegiatan dagang</label><br>
+            <label><input type="radio" name="q2" value="B"> b. Peningkatan dalam kegiatan dagang</label><br>
+            <label><input type="radio" name="q2" value="C"> c. Kestabilan dalam kegiatan dagang</label><br>
+            <label><input type="radio" name="q2" value="D"> d. Penguatan dalam kegiatan dagang</label><br>
+            <label><input type="radio" name="q2" value="E"> e. Kelesuan dalam kegiatan dagang</label><br>
+            <p id="result_q2"></p><br>
+
+            <p>3. Cermati paragraf berikut!<br>
+            PT PLN Persero mengandeng dua puluh perusahaan dalam kerja sama percepatan kendaraan bermotor listrik berbasis baterai. Kerja sama ini ditandatangani oleh PLN dan dua puluh perusahaan tersebut. Kerja sama ini merupakan langkah awal antara PLN dengan berbagai Mitra. Kerja sama ini dibuat dalam rangka menciptakan atau mewujudkan ekosistem kendaraan bermotor listrik berbasis baterai. <i>Ini dilakukan sebagai bukti PLN dalam komitmen mendukung program Pemerintah.</i><br>
+            Perbaikan kalimat bercetak miring pada paragraf tersebut adalah...</p>
+            <label><input type="radio" name="q3" value="A"> a. Kerja sama ini dilakukan supaya PLN mempercayai bahwa Pemerintah berkomitmen atas programnya.</label><br>
+            <label><input type="radio" name="q3" value="B"> b. Ini dilakukan sebagai bukti komitmen bahwa PLN telah mendukung program Pemerintah.</label><br>
+            <label><input type="radio" name="q3" value="C"> c. Ini dilakukan sebagai bukti bahwa PLN mendukung program Pemerintah.</label><br>
+            <label><input type="radio" name="q3" value="D"> d. Ini dilakukan sebagai bukti komitmen PLN dalam mendukung program-program Pemerintah.</label><br>
+            <label><input type="radio" name="q3" value="E"> e. Kerja sama ini dilakukan sebagai bukti komitmen PLN dalam mendukung program Pemerintah.</label><br>
+            <p id="result_q3"></p><br>
+
+            <p><strong>Cermati kedua kutipan berikut!</strong></p>
+
+            <p><strong>Teks 1</strong><br>
+            Ciplukan adalah buah yang mempunyai nama latin <em>Physialis Peruviana</em>. Buah ini sejenis tanaman liar yang juga disebut <em>morrel berry</em>, <em>golden berry</em>, dan <em>goose cape berry</em>. Buah ciplukan adalah buah yang populer karena rasa, aroma, dan warna dagingnya. Buah ini berbentuk unik karena wujud luarnya terlihat seperti kuntum bunga. Apabila dikupas, di dalamnya terdapat daging buah dan biji berwarna kuning terang. Buah ciplukan mempunyai ukuran diameter 1,25 sampai 2 cm. Buahnya berwarna hijau saat masih muda atau mentah. Ketika buah sudah matang, daging buah ini akan berubah menjadi halus, mengkilap, dan berubah warna menjadi kuning keemasan hingga oranye dengan banyak biji kecil di dalamnya. Buah kuning terang ini berasa manis dengan tekstur daging yang agak lunak. Umumnya buah ini dijadikan buah camilan, buah penghias kue, dan selai.</p>
+
+            <p><strong>Teks 2</strong><br>
+            Tidak hanya daun kersen yang dapat digunakan untuk berbagai pengobatan, tetapi juga buah kersen dapat dimanfaatkan untuk kesehatan. Buah kersen memiliki kandungan vitamin C yang tinggi sehingga dapat membantu mempercepat penyembuhan pilek dan flu. Kandungan vitamin C dalam buah kersen dapat membantu tubuh menyingkirkan patogen yang menyerang tubuh dengan lebih efisien. Buah kersen dipercaya sebanding dengan efek obat omeprazole. Sifat antiinflamasi dari buah kersen dipercaya dapat mengurangi endapan asam urat yang ada pada persendian.</p>
+
+            <p><strong>Perbedaan isi kedua teks tersebut adalah ...</strong></p>
+            <label><input type="radio" name="q4" value="A"> A. Teks 1 membahas manfaat buah ciplukan, Teks 2 membahas kandungan vitamin dalam buah kersen.</label><br>
+            <label><input type="radio" name="q4" value="B"> B. Teks 1 membahas morfologi tanaman ciplukan, Teks 2 membahas manfaat buah kersen bagi kesehatan.</label><br>
+            <label><input type="radio" name="q4" value="C"> C. Teks 1 membahas morfologi tanaman ciplukan, Teks 2 membahas kandungan vitamin dalam buah kersen.</label><br>
+            <label><input type="radio" name="q4" value="D"> D. Teks 1 membahas nama-nama lain tanaman ciplukan, Teks 2 membahas manfaat buah kersen untuk pencernaan.</label><br>
+            <label><input type="radio" name="q4" value="E"> E. Teks 1 membahas manfaat buah ciplukan, Teks 2 membahas sifat inflamasi pada buah kersen.</label><br>
+            <p id="result_q4"></p>
+
+            <p>5. Cermati teks berikut!</p>
+            <p>Listrik menjadi salah satu unsur yang berpotensi menimbulkan api ketika ada gas bocor. Sesuai prinsip segitiga api, ketika gas bocor dan tidak segera dilakukan penanganan yang tepat, gas akan berkumpul di ruangan dan berakumulasi. Kemudian, gas yang merupakan bahan bakar apabila bertemu dengan sumber panas, semisal listrik, berpeluang dan berpotensi menyebabkan timbulnya api. Selanjutnya, jika gas bereaksi dengan senyawa lain di sekitar, sesuai prinsip segitiga api, gas berpeluang menimbulkan kebakaran. Berkaitan dengan segitiga api, dapat didefinisikan sebagai suatu reaksi kimia cepat yang terbeludak dari tiga unsur, yakni sumber panas, udara, dan bahan bakar yang dapat menimbulkan atau menghasilkan api. Oleh karena itu, masyarakat diimbau untuk memperhatikan keamanan dan penggunaan gas elpiji.</p>
+            <p>Simpulan teks tersebut adalah...</p>
+            <label><input type="radio" name="q5" value="A"> a. Listrik menjadi salah satu unsur yang berpotensi menimbulkan api ketika ada gas bocor.</label><br>
+            <label><input type="radio" name="q5" value="B"> b. Ketika gas bocor dan tidak segera dilakukan penanganan yang tepat, gas akan berkumpul di ruangan dan berakumulasi.</label><br>
+            <label><input type="radio" name="q5" value="C"> c. Oleh karena itu, masyarakat diimbau untuk memperhatikan keamanan dan penggunaan gas elpiji.</label><br>
+            <label><input type="radio" name="q5" value="D"> d. Jika gas bereaksi dengan senyawa lain di sekitar, sesuai prinsip segitiga api, gas berpeluang menimbulkan kebakaran.</label><br>
+            <label><input type="radio" name="q5" value="E"> e. Gas yang merupakan bahan bakar apabila bertemu dengan sumber panas, semisal listrik berpeluang dan berpotensi menyebabkan timbulnya api.</label><br>
+            <p id="result_q5"></p><br>
+            
+            <p>6. Perhatikan editorial berikut!</p>
+            <p>Gunung Merapi di perbatasan Jawa Tengah dan DI Yogyakarta masih menyimpan potensi erupsi susulan. (2) Seperti diberitakan sebelumnya, erupsi Gunung Merapi terjadi pada Senin, 14 Oktober 2019, pukul 16.31 WIB. (3) Erupsi berdurasi 270 detik tersebut melepaskan awan panas dengan kolom letusan setinggi 3.000 meter, lebih tinggi dibandingkan dengan letusan pada 22 September 2019 yang menghasilkan kolom setinggi 800 meter. (4) Masyarakat diminta tetap waspada meskipun potensi erupsi susulan dipastikan tidak akan sebesar erupsi yang terjadi pada tahun 2006 dan 2010.</p>
+            <p>Kalimat fakta pada editorial di atas terdapat pada kalimat nomor...</p>
+            <label><input type="radio" name="q6" value="A"> a. (1) dan (2)</label><br>
+            <label><input type="radio" name="q6" value="B"> b. (1) dan (3)</label><br>
+            <label><input type="radio" name="q6" value="C"> c. (1) dan (4)</label><br>
+            <label><input type="radio" name="q6" value="D"> d. (2) dan (3)</label><br>
+            <label><input type="radio" name="q6" value="E"> e. (2) dan (4)</label><br>
+            <p id="result_q6"></p><br>
+            
+            <p>7. Perhatikan kutipan cerpen berikut!</p>
+            <p>"Bahkan ibu besedia pergi kepada apa yang disebut orang-orang pintar, dari satu pulau ke pulau lain. Padahal, ibu begitu benci pada ilmu mistik. Ibu tidak percaya pada semua yang tidak masuk akal. Namun, banyak yang menasihati ibu harus percaya dan mencobanya juga. Maklumlah alam timur masih penuh dengan hal-hal gaib, termasuk hal-hal yang berkaitan dengan mistik. Semua itu ibu lakukan untuk mendapatkan engkau, Maniek. Betapa ibu mendambakan kelahiranmu, Ndak."</p>
+            <p>Ketersikaan watak tokoh ibu seorang yang bimbang pada kutipan tersebut dengan kehidupan sehari-hari adalah....</p>
+            <label><input type="radio" name="q7" value="A"> a. Pasrah pada kehendak yang Mahakuasa.</label><br>
+            <label><input type="radio" name="q7" value="B"> b. Prinsip seseorang akhirnya goyah mendengar nasihat orang.</label><br>
+            <label><input type="radio" name="q7" value="C"> c. Berusaha keras dan berserah diri kepada Tuhan.</label><br>
+            <label><input type="radio" name="q7" value="D"> d. Bersemangat karena ingin mendapatkan anak secara medis.</label><br>
+            <label><input type="radio" name="q7" value="E"> e. Menjunjung tinggi logika dalam berusaha mendapatkan anak.</label><br>
+            <p id="result_q7"></p><br>
+
+            <p>8. Perhatikan kutipan cerpen berikut!</p>
+            <p>“Bahkan ibu besedia pergi kepada apa yang disebut orang-orang pintar, dari satu pulau ke pulau lain. Padahal, ibu begitu benci pada ilmu mistik. Ibu tidak percaya pada semua yang tidak masuk akal. Namun, banyak yang menasihati ibu harus percaya dan mencobanya juga. Maklumlah alam timur masih penuh dengan hal-hal gaib, termasuk hal-hal yang berkaitan dengan mistik. Semua itu ibu lakukan untuk mendapatkan engkau, Maniek. Betapa ibu mendambakan kelahiranmu, Ndak.”</p>
+
+            <p>Konflik yang terdapat dalam kutipan cerpen tersebut adalah...</p>
+            <label><input type="radio" name="q8" value="A"> a. Harus menemui orang yang disebut orang-orang pintar</label><br>
+            <label><input type="radio" name="q8" value="B"> b. Tokoh ibu yang tidak percaya pada semua yang tidak masuk akal</label><br>
+            <label><input type="radio" name="q8" value="C"> c. Tokoh ibu menuruti kata orang untuk berobat kepada orang pintar</label><br>
+            <label><input type="radio" name="q8" value="D"> d. Keinginan untuk segera mendapatkan keturunan</label><br>
+            <label><input type="radio" name="q8" value="E"> e. Tidak mempercayai mistik tetapi tetap melakukan pekerjaan itu</label><br>
+            <p id="result_q8"></p><br>
+
+            <p>9. Cermati penggalan hikayat di bawah ini!</p>
+            <p>“Maka di dalam antara menteri yang banyak itu ada seorang menteri tua dari pada menteri yang banyak itu. Maka ia pun berkata, maka segala
+            menteri dan hulubalang itu pun tersenyum seraya berkata, ‘Jika sungguh tuan hamba bersaudara kan hamba sekalian ini, dengan tulus dan ikhlas, hendaklah tuan hamba katakan, jika apa sekalipun.’ Setelah itu menteri tua itu pun berkata, katanya, ‘Bahwasannya hamba ini mendengar, tatkala hamba lagi kecil dahulu, rentak seru mahrum yang tua itu; maka sabdanya, mahrum itu, ‘Adapun dan negeri ini, jikalau tiada lagi rajanya, maka hendak dilepas gajah kesaktian itu, barang siapa yang berkenan kepadanya, ia itulah raja olehmu, supaya sentosa di dalam negeri ini.’ Setelah didengar oleh sekalian menteri dan hulubalang itu akan kata menteri itu, maka sekalian nya pun berkenanlah di dalam hatinya.”</p>
+            
+            <p>Karakteristik sastra Melayu berupa kemustahilan dalam kutipan tersebut adalah...</p>
+            <label><input type="radio" name="q9" value="A"> a. Pemilihan raja ditentukan oleh seekor gajah</label><br>
+            <label><input type="radio" name="q9" value="B"> b. Raja yang turun tangan dalam memilih penggantinya</label><br>
+            <label><input type="radio" name="q9" value="C"> c. Ketidaksentosaan dalam sebuah negeri yang dipimpin raja yang baik</label><br>
+            <label><input type="radio" name="q9" value="D"> d. Keberatan raja yang menyerahkan gajah saktinya kepada menteri</label><br>
+            <label><input type="radio" name="q9" value="E"> e. Sebuah negeri yang dipimpin oleh seekor gajah</label><br>
+            <p id="result_q9"></p><br>
+
+            <p>10. Cermati penggalan hikayat di bawah ini!</p>
+            <p>
+            Maka di dalam antara menteri yang banyak itu ada seorang menteri tua dari pada menteri yang banyak itu. Maka ia pun berkata, maka segala
+            menteri dan hulubalang itu pun tersenyum seraya berkata, “Jika sungguh tuan hamba bersaudarakan hamba sekalian ini, dengan tulus dan ikhlas, hendaklah tuan hamba katakan, jika apa sekalipun.” Setelah itu menteri tua itu pun berkatalah, katanya, “Bahwasannya hamba ini
+            mendengar, tatkala hamba lagi kecil dahulu, perkataan mahrum yang tua itu; maka sabdanya, mahrum itu, “Adapun akan negeriku ini, jikalau tiada lagi rajanya, maka hendaklah dilepas gajah kesaktian itu, barang siapa yang berkenan kepadanya, ia itulah raja olehmu, supaya sentosa di dalam negeri ini.” Setelah didengar oleh sekalian menteri dan hulubalang itu akan kata menteri itu, maka sekaliannya pun berkenanlah di dalam hatinya.
+            </p>
+            <p>Nilai budaya yang terkandung dalam kutipan sastra Melayu klasik tersebut adalah...</p>
+            <label><input type="radio" name="q10" value="A"> a. Melakukan pemilihan raja berdasarkan adat kebiasaan di zaman pendahulunya.</label><br>
+            <label><input type="radio" name="q10" value="B"> b. Menurunkan tahta kerajaan kepada generasi garis keturunan raja.</label><br>
+            <label><input type="radio" name="q10" value="C"> c. Kebiasaan Tuan Puteri tidak boleh berbicara bila berhadapan dengan seorang raja.</label><br>
+            <label><input type="radio" name="q10" value="D"> d. Anggapan bahwa seorang raja harus dihormati dan didengar perintahnya.</label><br>
+            <label><input type="radio" name="q10" value="E"> e. Seorang menteri dan hulubalang raja tidak boleh menentang perintah raja.</label><br>
+            <p id="result_q10"></p><br>
+            
+            <p>11. Cermati petunjuk kerja berikut!</p>
+            <p>
+            Cara Membuat Tapai Singkong:
+            <ol>
+            <li>Kupaslah singkong dan kerik bagian luarnya.</li>
+            <li>Cuci bersih singkong yang sudah dikupas.</li>
+            <li>Kukuslah singkong selama lebih kurang 25 menit sampai singkong matang.</li>
+            <li>Dinginkan singkong tersebut.</li>
+            <li>[ . . . . ]</li>
+            <li>Masukkan singkong ke dalam wadah yang sudah dilapisi daun pisang.</li>
+            <li>Tambahkan satu sendok gula pasir.</li>
+            <li>Tutup rapat singkong dan simpan di suhu ruang selama 36 – 48 jam lamanya.</li>
+            <li>Tapai singkong pun siap disajikan.</li>
+            </ol>
+            </p>
+            <p>Kalimat yang tepat untuk melengkapi prosedur pembuatan tapai singkong di atas adalah...</p>
+            <label><input type="radio" name="q11" value="A"> a. Taburkan ragi yang sudah dihaluskan dengan saringan di atas singkong.</label><br>
+            <label><input type="radio" name="q11" value="B"> b. Ambillah ragi sesuai kebutuhan, lalu haluskan ragi tersebut.</label><br>
+            <label><input type="radio" name="q11" value="C"> c. Siapkan wadah yang dilapisi daun untuk menaruh singkong.</label><br>
+            <label><input type="radio" name="q11" value="D"> d. Masukkan singkong ke dalam ragi yang sudah dihaluskan.</label><br>
+            <label><input type="radio" name="q11" value="E"> e. Potong-potong singkong sebelum ditaburi ragi.</label><br>
+            <p id="result_q11"></p><br>
+            
+            <p>12. Cermatilah tema karya ilmiah berikut!</p>
+            <p>
+            Tema: Upaya meningkatkan minat siswa melalui kegiatan karya ilmiah remaja
+            </p>
+            <p>Kalimat latar belakang yang sesuai dengan tema tersebut adalah...</p>
+            <label><input type="radio" name="q12" value="A"> a. Kreativitas yang dimiliki siswa pada zaman sekarang berbeda dengan kreativitas siswa yang dimiliki zaman dahulu. Itulah yang dilontarkan para pengamat pendidikan mengenai keadaan siswa sekarang dan dahulu sangat berbeda.</label><br>
+            <label><input type="radio" name="q12" value="B"> b. Saat ini banyak orang yang menganggap bahwa minat siswa dalam penulisan karya ilmiah remaja sangat rendah. Hal tersebut dibuktikan dengan sedikitnya jumlah siswa yang mengikuti perlombaan penulisan karya ilmiah remaja yang diselenggarakan beberapa instansi.</label><br>
+            <label><input type="radio" name="q12" value="C"> c. Jika kita berbicara mengenai lomba karya ilmiah remaja, kita juga membicarakan minat siswa terhadap penulisan karya ilmiah remaja. Minat siswa terhadap karya ilmiah remaja dibuktikan prestasi beberapa siswa di beberapa Negara tetangga.</label><br>
+            <label><input type="radio" name="q12" value="D"> d. Oleh karena itu, untuk membuktikannya, penulis akan menyelidiki dan memaparkan dalam karya tulis agar lebih jelas masalahnya dan mengenai sasaran.</label><br>
+            <label><input type="radio" name="q12" value="E"> e. Siswa zaman dahulu tidak senang melakukan penelitian terhadap masalah yang sedang berkembang. Hal tersebut berbeda dengan kondisi siswa saat ini yang selalu aktif melakukan penelitian di mana pun mereka berada.</label><br>
+            <p id="result_q12"></p><br>
+            
+            <p>13. Perhatikan judul-judul karangan ilmiah berikut!</p>
+            <p>
+            1. Strategi Pembangunan Pertanian yang Visioner dan Integratif<br>
+            2. Budi Daya Jamur Merang dengan Media Kardus<br>
+            3. Membuat Pakan Ternak dan Unggas dari Limbah Peternakan<br>
+            4. Teknologi Fermentasi pada Industri Peternakan<br>
+            5. Panduan Lengkap Memelihara Ikan Air Tawar di Kolam Terpal
+            </p>
+            <p>Penulisan judul karangan ilmiah yang tidak tepat ditunjukkan oleh angka...</p>
+            <label><input type="radio" name="q13" value="A"> a. 1</label><br>
+            <label><input type="radio" name="q13" value="B"> b. 2</label><br>
+            <label><input type="radio" name="q13" value="C"> c. 3</label><br>
+            <label><input type="radio" name="q13" value="D"> d. 4</label><br>
+            <label><input type="radio" name="q13" value="E"> e. 5</label><br>
+            <p id="result_q13"></p><br>
+
+            <p>14. Gajahmada adalah seorang patih Amangku Bhumi Majapahit yang mengucapkan Sumpah Palapa. Isi sumpah Palapa antara lain…</p>
+            <label><input type="radio" name="q14" value="A"> a. Tidak akan memberi peluang pada kerajaan lain untuk maju</label><br>
+            <label><input type="radio" name="q14" value="B"> b. Tidak akan beristirahat sebelum nusantara bersatu di bawah panji Majapahit</label><br>
+            <label><input type="radio" name="q14" value="C"> c. Tidak ada kompromi dengan kerajaan-kerajaan lain untuk berinteraksi di Majapahit</label><br>
+            <label><input type="radio" name="q14" value="D"> d. Tidak akan menggunakan produk selain produk Majapahit sebelum nusantara besar</label><br>
+            <label><input type="radio" name="q14" value="E"> e. Tidak akan hidup mewah sebelum seluruh nusantara berhasil disatukan oleh kerajaan Majapahit</label><br>
+            <p id="result_q14"></p><br>
+
+            <p>15. Proses Islamisasi di Indonesia dilakukan dengan cara berdakwah, perkawinan, perdagangan, dan sebagainya. Penyebaran ajaran Islam melalui perdagangan lebih efektif dibandingkan cara lain, hal ini disebabkan karena…</p>
+            <label><input type="radio" name="q15" value="A"> a. Dapat dilakukan dalam waktu tidak terbatas</label><br>
+            <label><input type="radio" name="q15" value="B"> b. Daerah perdagangan dapat berkembang pesat</label><br>
+            <label><input type="radio" name="q15" value="C"> c. Dapat menjangkau kalangan istana dan masyarakat biasa</label><br>
+            <label><input type="radio" name="q15" value="D"> d. Para pedagang dapat menyebarkan agama sambil berdagang</label><br>
+            <label><input type="radio" name="q15" value="E"> e. Daerah perdagangan menyediakan keuntungan bagi kaum pedagang</label><br>
+            <p id="result_q15"></p><br>
+
+            <p>16. Bangunan menara masjid yang berbentuk seperti candi merupakan akulturasi antara kebudayaan Islam dan Hindu adalah menara masjid…</p>
+            <label><input type="radio" name="q16" value="A"> a. Masjid Kudus</label><br>
+            <label><input type="radio" name="q16" value="B"> b. Masjid Banten</label><br>
+            <label><input type="radio" name="q16" value="C"> c. Masjid Makassar</label><br>
+            <label><input type="radio" name="q16" value="D"> d. Masjid Demak</label><br>
+            <label><input type="radio" name="q16" value="E"> e. Masjid Aceh</label><br>
+            <p id="result_q16"></p><br>
+ 
+            <p>17. Indische Partij didirikan oleh Douwes Dekker, Cipto …</p>
+            <label><input type="radio" name="q17" value="A"> a. Memperjuangkan nasib para pelajar</label><br>
+            <label><input type="radio" name="q17" value="B"> b. Mempersiapkan kehidupan bangsa</label><br>
+            <label><input type="radio" name="q17" value="C"> c. Bergerak di bidang pendidikan, sosial, dan</label><br>
+            <label><input type="radio" name="q17" value="D"> d. Membiayai anak-anak yang tidak</label><br>
+            <label><input type="radio" name="q17" value="E"> e. Mengembangkan sistem pendidikan modern</label><br>
+            <p id="result_q17"></p><br>
+
+            <p>18. VOC (Vereenigde Oost-Indische Compagnie) didirikan pada tanggal 20 Maret 1602. Tujuan dibentuknya VOC antara lain…</p>
+            <label><input type="radio" name="q18" value="A"> a. Menghadapi persaingan antar pedagang Belanda</label><br>
+            <label><input type="radio" name="q18" value="B"> b. Menguasai pusat perdagangan di Asia</label><br>
+            <label><input type="radio" name="q18" value="C"> c. Memerintah atas nama pemerintah Belanda</label><br>
+            <label><input type="radio" name="q18" value="D"> d. Men monopoli perdagangan rempah-rempah</label><br>
+            <label><input type="radio" name="q18" value="E"> e. Mengumpulkan kekuatan sebesar-besarnya</label><br>
+            <p id="result_q18"></p><br>            
+
+            <p>19. Perhatikan data-data berikut ini!<br>
+           1. Timbulnya nasionalisme<br>
+           2. Penghapusan pajak feodal<br>
+           3. Penghapusan masyarakat feodal<br>
+           4. Timbulnya paham demokrasi dan liberalisme<br>
+           5. Undang-Undang merupakan kekuasaan tertinggi<br>
+           Berdasarkan data tersebut dampak Revolusi Prancis di bidang politik adalah...</p>
+            <label><input type="radio" name="q19" value="A"> a. 1, 2, dan 3</label><br>
+            <label><input type="radio" name="q19" value="B"> b. 2, 3, dan 4</label><br>
+            <label><input type="radio" name="q19" value="C"> c. 3, 4, dan 5</label><br>
+            <label><input type="radio" name="q19" value="D"> d. 1, 4, dan 5</label><br>
+            <label><input type="radio" name="q19" value="E"> e. 2, 4, dan 5</label><br>
+            <p id="result_q19"></p><br>
+
+            <p>20. Perhatikan data-data berikut!<br>
+               1) Bersifat radikal<br>
+               2) Non kooperatif<br>
+               3) Sistem organisasi modern<br>
+               4) Perjuangan Bersifat kebangsaan<br>
+               5) Bersifat kedaerahan<br>
+               6) Munculnya kaum terpelajar<br>
+               Berdasarkan data-data tersebut yang termasuk ciri-ciri pergerakan nasional Indonesia pada masa kebangkitan nasional (1908-1942) adalah...</p>
+            <label><input type="radio" name="q20" value="A"> a. 1, 3, 4</label><br>
+            <label><input type="radio" name="q20" value="B"> b. 2, 4, 5</label><br>
+            <label><input type="radio" name="q20" value="C"> c. 1, 2, 3</label><br>
+            <label><input type="radio" name="q20" value="D"> d. 3, 4, 5</label><br>
+            <label><input type="radio" name="q20" value="E"> e. 3, 4, 6</label><br>
+            <p id="result_q20"></p><br>
+
+            <p>21. Merkantilisme yang berkembang pada era Renaisans secara tidak langsung melahirkan kolonialisme dan imperialisme karena...</p>
+            <label><input type="radio" name="q21" value="A"> a. Adanya kesadaran berlimpahnya sumber daya di luar negeri</label><br>
+            <label><input type="radio" name="q21" value="B"> b. Penekanannya pada pengurangan ekspor dan peningkatan impor</label><br>
+            <label><input type="radio" name="q21" value="C"> c. Perdagangan internal antara sesama bangsa di Eropa mengalami titik jenuh</label><br>
+            <label><input type="radio" name="q21" value="D"> d. Ukuran kesejahteraan/kekuasaan adalah banyaknya jumlah logam mulia yang dimiliki</label><br>
+            <label><input type="radio" name="q21" value="E"> e. Ketergantungan negara pada merchants untuk berdagang melintasi batas Negara</label><br>
+            <p id="result_q21"></p><br>
+
+            <p>22. Revolusi Perancis merupakan bentuk protes dan perlawanan rakyat Perancis terhadap raja karena menggunakan sistem politik …</p>
+	    <label><input type="radio" name="q22" value="A"> a. Monarki Absolut</label><br>
+	    <label><input type="radio" name="q22" value="B"> b. Kediktatoran militer</label><br>
+	    <label><input type="radio" name="q22" value="C"> c. Monarki Parlementer</label><br>
+	    <label><input type="radio" name="q22" value="D"> d. Monarki Konstitusional</label><br>
+	    <label><input type="radio" name="q22" value="E"> e. Monarki Konstitusional</label><br>
+	    <p id="result_q22"></p><br>
+
+	    <p>23. Pelopor berdirinya organisasi-organisasi pergerakan di Indonesia adalah…</p>
+	    <label><input type="radio" name="q23" value="A"> a. Budi Utomo</label><br>
+	    <label><input type="radio" name="q23" value="B"> b. Taman siswa</label><br>
+	    <label><input type="radio" name="q23" value="C"> c. Sarekat Islam</label><br>
+	    <label><input type="radio" name="q23" value="D"> d. Indische Partij</label><br>
+	    <label><input type="radio" name="q23" value="E"> e. Tri Koro Dharmo</label><br>
+	    <p id="result_q23"></p><br>
+
+	    <p>24. Kedatangan Jepang di Indonesia membawa dampak di bidang ekonomi, politik, sosial, budaya. Kebijakan yang berkaitan …</p>
+	    <label><input type="radio" name="q24" value="A"> a. Pengerahan tenaga kerja paksa (Romusha) yang menimbulkan</label><br>
+	    <label><input type="radio" name="q24" value="B"> b. Membubarkan organisasi pergerakan nasional yang</label><br>
+	    <label><input type="radio" name="q24" value="C"> c. Jepang menginginkan bahasa Indonesia dijadikan sebagai</label><br>
+	    <label><input type="radio" name="q24" value="D"> d. Pembatasan pers yang sangat ketat, sehingga tidak terdapat pers yang bebas</label><br>
+	    <label><input type="radio" name="q24" value="E"> e. Diwajibkan untuk menyanyikan lagu kebangsaan Jepang (Kimigayo)</label><br>
+	    <p id="result_q24"></p><br>
+
+	    <p>25. Pengaruh positif dari cara pendidikan Jepang adalah…</p>
+	    <label><input type="radio" name="q25" value="A"> a. Para pemuda Indonesia memiliki wawasan luas</label><br>
+	    <label><input type="radio" name="q25" value="B"> b. Para pemuda dapat membuat peralatan militer</label><br>
+	    <label><input type="radio" name="q25" value="C"> c. Rakyat Indonesia mengetahui tentang budaya Jepang</label><br>
+	    <label><input type="radio" name="q25" value="D"> d. Para pemuda terlatih dalam bidang kemiliteran</label><br>
+	    <label><input type="radio" name="q25" value="E"> e. Rakyat Indonesia menjadi kaum yang literat</label><br>
+	    <p id="result_q25"></p><br>
+
+            <p>26. Gerakan yang menghendaki suatu masyarakat disusun secara kolektif agar menjadi suatu masyarakat yang sejahtera merupakan pengertian dari paham...</p>
+            <label><input type="radio" name="q26" value="A"> a. Sosialisme</label><br>
+            <label><input type="radio" name="q26" value="B"> b. Liberalisme</label><br>
+            <label><input type="radio" name="q26" value="C"> c. Demokrasi</label><br>
+            <label><input type="radio" name="q26" value="D"> d. Nasionalisme</label><br>
+            <label><input type="radio" name="q26" value="E"> e. Pan-Islamisme</label><br>
+            <p id="result_q26"></p><br>
+
+            <p>27. Ajaran Mahatma Gandhi yang mengajarkan agar masyarakat India menentang kekerasan adalah...</p>
+            <label><input type="radio" name="q27" value="A"> a. Hartal</label><br>
+            <label><input type="radio" name="q27" value="B"> b. Ahimsa</label><br>
+            <label><input type="radio" name="q27" value="C"> c. Swadesi</label><br>
+            <label><input type="radio" name="q27" value="D"> d. Satya graha</label><br>
+            <label><input type="radio" name="q27" value="E"> e. Purna Swaraj</label><br>
+            <p id="result_q27"></p><br>
+
+            <p>28. Langkah awal nasionalisme Jepang diawali dengan pengembalian kekuasaan kaisar Jepang. Gerakan tersebut dikenal dengan istilah...</p>
+            <label><input type="radio" name="q28" value="A"> a. Modernisasi Jepang</label><br>
+            <label><input type="radio" name="q28" value="B"> b. Restorasi Mutsuhito</label><br>
+            <label><input type="radio" name="q28" value="C"> c. Restorasi Meiji</label><br>
+            <label><input type="radio" name="q28" value="D"> d. Seinenrdan</label><br>
+            <label><input type="radio" name="q28" value="E"> e. Keibodan</label><br>
+            <p id="result_q28"></p><br>
+
+            <p>29. Faktor ekstern yang menyebabkan lahir dan berkembangnya nasionalisme Indonesia salah satunya adalah...</p>
+            <label><input type="radio" name="q29" value="A"> a. Terpelajar</label><br>
+            <label><input type="radio" name="q29" value="B"> b. Rhodesia, Africa</label><br>
+            <label><input type="radio" name="q29" value="C"> c. Di masa lalu</label><br>
+            <label><input type="radio" name="q29" value="D"> d. Terhadap Rusia</label><br>
+            <label><input type="radio" name="q29" value="E"> e. Akibat politik Drainage</label><br>
+            <p id="result_q29"></p><br>
+
+            <p>30. KMB (Konferensi Meja Bundar) diadakan di Den Haag dari tanggal 23 Agustus hingga 2 November 1949. Tujuan diadakannya KMB adalah...</p>
+            <label><input type="radio" name="q30" value="A"> a. Merundingkan pengakuan kedaulatan RI</label><br>
+            <label><input type="radio" name="q30" value="B"> b. Merundingkan penyerahan wilayah Irian Barat ke RI</label><br>
+            <label><input type="radio" name="q30" value="C"> c. Merumuskan negara BFO yang akan bergabung dengan RI</label><br>
+            <label><input type="radio" name="q30" value="D"> d. Mengakhiri perselisihan antara Indonesia dan Belanda dengan jalan diplomasi</label><br>
+            <label><input type="radio" name="q30" value="E"> e. Mengakhiri perselisihan antara Indonesia dan Belanda dengan jalan konfrontasi</label><br>
+            <p id="result_q30"></p><br>
+
+            <p>31. Perhatikan pernyataan berikut!<br>
+            (1) RI dan Belanda akan membentuk negara RIS.<br>
+            (2) Indonesia menjadi negara Persemakmuran Belanda.<br>
+            (3) Presiden Indonesia di bawah kekuasaan Ratu Belanda.<br>
+            (4) RIS dan Belanda akan membentuk Uni Indonesia-Belanda.<br>
+            (5) Belanda mengakui secara de facto RI hanya wilayah Sumatra, Jawa, Madura.<br>
+            Berdasarkan pernyataan tersebut, isi perundingan Linggarjati adalah...</p>
+            <label><input type="radio" name="q31" value="A"> a. 1, 4, dan 5</label><br>
+            <label><input type="radio" name="q31" value="B"> b. 2, 4, dan 5</label><br>
+            <label><input type="radio" name="q31" value="C"> c. 1, 3, dan 5</label><br>
+            <label><input type="radio" name="q31" value="D"> d. 1, 3, dan 4</label><br>
+            <label><input type="radio" name="q31" value="E"> e. 3, 4, dan 5</label><br>
+            <p id="result_q31"></p><br>
+
+            <p>32. Perhatikan pernyataan berikut!<br>
+            (1) RI dan Belanda akan membentuk negara RIS<br>
+            (2) Indonesia menjadi negara Persemakmuran Belanda.<br>
+            (3) Presiden Indonesia di bawah kekuasaan Ratu Belanda<br>
+            (4) RIS dan Belanda akan membentuk Uni Indonesia Belanda.<br>
+            (5) Belanda mengakui secara de facto RI hanya wilayah Sumatra, Jawa, Madura<br>
+            Berdasarkan pernyataan tersebut, isi Perundingan Konferensi Meja Bundar adalah...</p>
+
+            <label><input type="radio" name="q32" value="A"> a. 1, 4, dan 5</label><br>
+            <label><input type="radio" name="q32" value="B"> b. 2, 4, dan 5</label><br>
+            <label><input type="radio" name="q32" value="C"> c. 1, 3, dan 5</label><br>
+            <label><input type="radio" name="q32" value="D"> d. 1, 3, dan 4</label><br>
+            <label><input type="radio" name="q32" value="E"> e. 3, 4, dan 5</label><br>
+            <p id="result_q32"></p><br>
+
+            <p>33. Pada masa Demokrasi Terpimpin, Indonesia keluar dari keanggotaan PBB. Kebijakan ini terjadi sebagai dampak politik luar negeri RI yang bersifat…</p>
+            <label><input type="radio" name="q33" value="A"> a. Menyetujui pembentukan negara federal Malaysia</label><br>
+            <label><input type="radio" name="q33" value="B"> b. Memulihkan hubungan diplomatik dengan Malaysia</label><br>
+            <label><input type="radio" name="q33" value="C"> c. Memutuskan hubungan dengan negara berhaluan kiri</label><br>
+            <label><input type="radio" name="q33" value="D"> d. Mencari dukungan dari negara-negara di Asia Tenggara</label><br>
+            <label><input type="radio" name="q33" value="E"> e. Mempererat hubungan diplomatik dengan negara-negara lain</label><br>
+            <p id="result_q33"></p><br>
+            
+            <p>34. Arti penting kerjasama internasional dan penggalangan kerjasama internasional yang dilakukan untuk mendapatkan bantuan ekonomi Indonesia pada awal kemerdekaan yaitu…</p>
+            <label><input type="radio" name="q34" value="A"> a. Realisasi kebijakan politik mercusuar Orde Lama</label><br>
+            <label><input type="radio" name="q34" value="B"> b. Untuk mendapatkan bantuan ekonomi Indonesia</label><br>
+            <label><input type="radio" name="q34" value="C"> c. Mendapat dukungan atas kemerdekaan Indonesia</label><br>
+            <label><input type="radio" name="q34" value="D"> d. Mendorong kebijakan politik luar negeri RI Bebas-Aktif</label><br>
+            <label><input type="radio" name="q34" value="E"> e. Memperkuat posisi Indonesia dalam kerjasama Asia-Afrika</label><br>
+            <p id="result_q34"></p><br>
+            
+            <p>35. Peran yang ditunjukkan PBB dalam membantu Indonesia menyelesaikan masalah Irian Barat adalah…</p>
+            <label><input type="radio" name="q35" value="A"> a. Menekan Belanda untuk menarik pasukan</label><br>
+            <label><input type="radio" name="q35" value="B"> b. Mendesak Amerika untuk menekan Belanda</label><br>
+            <label><input type="radio" name="q35" value="C"> c. Mengirim senjata canggih untuk Indonesia</label><br>
+            <label><input type="radio" name="q35" value="D"> d. Mendirikan pemerintahan sementara melalui UNTEA</label><br>
+            <label><input type="radio" name="q35" value="E"> e. Mengirimkan pasukan internasional untuk membantu Indonesia</label><br>
+            <p id="result_q35"></p><br>
+
+            <p>36. Negara yang dikenal sebagai negara adidaya pada masa Perang Dingin adalah…</p>
+            <label><input type="radio" name="q36" value="A"> a. Rusia dan Inggris</label><br>
+            <label><input type="radio" name="q36" value="B"> b. Uni Soviet dan Jerman</label><br>
+            <label><input type="radio" name="q36" value="C"> c. Amerika Serikat dan Inggris</label><br>
+            <label><input type="radio" name="q36" value="D"> d. Rusia dan Inggris</label><br>
+            <label><input type="radio" name="q36" value="E"> e. Amerika Serikat dan Israel</label><br>
+            <p id="result_q36"></p><br>
+            
+            <p>37. Latar belakang terjadinya Perang Dingin adalah…</p>
+            <label><input type="radio" name="q37" value="A"> a. Gagasan revolusi Bolshevik yang disebarkan ke seluruh dunia</label><br>
+            <label><input type="radio" name="q37" value="B"> b. Perlombaan senjata antara Amerika Serikat dan Uni Soviet</label><br>
+            <label><input type="radio" name="q37" value="C"> c. Amerika ingin menjadi negara terkuat di dunia</label><br>
+            <label><input type="radio" name="q37" value="D"> d. Persaingan teknologi nuklir antara Amerika Serikat dan Uni Soviet</label><br>
+            <label><input type="radio" name="q37" value="E"> e. Adanya pertentangan ideologi yang dianut Amerika dan Uni Soviet</label><br>
+            <p id="result_q37"></p><br>
+            
+            <p>38. Program Marshall Plan ditujukan untuk pembangunan bagi negara-negara yang hancur akibat PD II di kawasan…</p>
+            <label><input type="radio" name="q38" value="A"> a. Benua Asia</label><br>
+            <label><input type="radio" name="q38" value="B"> b. Benua Afrika</label><br>
+            <label><input type="radio" name="q38" value="C"> c. Benua Eropa</label><br>
+            <label><input type="radio" name="q38" value="D"> d. Benua Amerika</label><br>
+            <label><input type="radio" name="q38" value="E"> e. Benua Australia</label><br>
+            <p id="result_q38"></p><br>
+            
+            <p>39. Berikut ini yang tidak termasuk latar belakang berdirinya Gerakan Non Blok adalah…</p>
+            <label><input type="radio" name="q39" value="A"> a. Memihak pada salah satu blok</label><br>
+            <label><input type="radio" name="q39" value="B"> b. Terjadinya Perang Dingin dan ketegangan dunia</label><br>
+            <label><input type="radio" name="q39" value="C"> c. Persamaan nasib yaitu bangsa-bangsa yang pernah dijajah</label><br>
+            <label><input type="radio" name="q39" value="D"> d. Terjadinya krisis Kuba yang mengancam perdamaian dunia</label><br>
+            <label><input type="radio" name="q39" value="E"> e. Pada tahun 1961 terjadinya pertemuan di Kairo sebagai Persiapan KTT 1 GNB</label><br>
+            <p id="result_q39"></p><br>
+            
+            <p>40. Di bawah ini negara yang tidak terlibat dalam berdirinya GNB atau Gerakan Non Blok adalah…</p>
+            <label><input type="radio" name="q40" value="A"> a. India</label><br>
+            <label><input type="radio" name="q40" value="B"> b. Mesir</label><br>
+            <label><input type="radio" name="q40" value="C"> c. Amerika</label><br>
+            <label><input type="radio" name="q40" value="D"> d. Indonesia</label><br>
+            <label><input type="radio" name="q40" value="E"> e. Yugoslavia</label><br>
+            <p id="result_q40"></p><br>
+
+
+
+            <button class="button disabled" type="submit" id="submitButton" disabled>Submit Jawaban</button>
+        </form>
+        <p id="score"></p>
+        <a href="index.html" class="button">Kembali ke Beranda</a>
+    </div>
+
+    <script>
+        let timeLeft = 3600;
+        let timerElement = document.getElementById("timer");
+        let submitButton = document.getElementById("submitButton");
+
+        function updateTimer() {
+            let minutes = Math.floor(timeLeft / 60);
+            let seconds = timeLeft % 60;
+            timerElement.textContent = "Sisa Waktu: " + minutes + ":" + (seconds < 10 ? "0" : "") + seconds;
+            if (timeLeft > 0) {
+                timeLeft--;
+                setTimeout(updateTimer, 1000);
+            } else {
+                alert("Waktu habis! Jawaban akan dikoreksi.");
+                document.getElementById("quizForm").submit();
+            }
+        }
+
+        setTimeout(updateTimer, 1000);
+
+        function checkAllAnswered() {
+            let allAnswered = true;
+            let totalQuestions = 40;
+            for (let i = 1; i <= totalQuestions; i++) {
+                let answered = document.querySelector(`input[name="q${i}"]:checked`);
+                if (!answered) {
+                    allAnswered = false;
+                    break;
+                }
+            }
+            if (allAnswered) {
+                submitButton.disabled = false;
+                submitButton.classList.remove("disabled");
+            } else {
+                submitButton.disabled = true;
+                submitButton.classList.add("disabled");
+            }
+        }
+
+        document.querySelectorAll("input[type='radio']").forEach(input => {
+            input.addEventListener("change", checkAllAnswered);
+        });
+
+        document.getElementById("quizForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            let correctAnswers = {
+                q1: "A",
+                q2: "E",
+                q3: "E",
+                q4: "B",
+                q5: "C",
+                q6: "D",
+                q7: "B",
+                q8: "D",
+                q9: "E",
+                q10: "A",
+                q11: "A",
+                q12: "B",
+                q13: "C",
+                q14: "B",
+                q15: "E",
+                q16: "A",
+                q17: "B",
+                q18: "B",
+                q19: "C",
+                q20: "B",
+                q21: "D",
+                q22: "D",
+                q23: "C",
+                q24: "E",
+                q25: "B",
+                q26: "C",
+                q27: "B",
+                q28: "D",
+                q29: "B",
+                q30: "C",
+                q31: "A",
+                q32: "C",
+                q33: "E",
+                q34: "B",
+                q35: "D",
+                q36: "C",
+                q37: "D",
+                q38: "A",
+                q39: "B",
+                q40: "D"
+
+            };
+            let score = 0;
+
+            for (let key in correctAnswers) {
+                let selected = document.querySelector(`input[name="${key}"]:checked`);
+                let resultElement = document.getElementById(`result_${key}`);
+
+                if (selected) {
+                    if (selected.value === correctAnswers[key]) {
+                        score += 2.5;
+                        resultElement.innerHTML = "✔ Benar";
+                        resultElement.className = "correct";
+                    } else {
+                        resultElement.innerHTML = `✘ Salah, Jawaban Benar: ${correctAnswers[key]}`;
+                        resultElement.className = "wrong";
+                    }
+                }
+            }
+
+            document.getElementById("score").innerHTML = `<strong>Skor Anda: ${score} dari 100</strong>`;
+        });
+    </script>
 </body>
 </html>
-
